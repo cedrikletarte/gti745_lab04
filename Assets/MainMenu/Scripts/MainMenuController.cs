@@ -18,6 +18,6 @@ public class MainMenuController : MonoBehaviour
     public void SelectRythmeMode()
     {
         Debug.Log("Mode Rythme sélectionné.");
-        // TODO: charger la scène du mode Rythme lorsqu'elle sera disponible.
+        SceneManager.LoadScene(rythmeSceneName);
     }
 }

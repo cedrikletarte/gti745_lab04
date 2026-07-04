@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using DrumKit.Audio;
 using DrumKit.Striking;
@@ -45,6 +46,9 @@ namespace DrumKit.Pieces
         Rigidbody m_Rigidbody;
         float m_LastEventTime = float.NegativeInfinity;
 
+        /// <summary>Raised on every genuine hit (past the cooldown and minStrikeSpeed gates), with (piece, intensity01, worldContactPoint) - the hook for rhythm-mode scoring/VFX to observe strikes without touching this class.</summary>
+        public event Action<DrumPiece, float, Vector3> OnStruck;
+
         void Awake()
         {
             m_Collider = GetComponent<Collider>();
@@ -83,6 +87,8 @@ namespace DrumKit.Pieces
 
             float intensity01 = Mathf.Clamp01(Mathf.InverseLerp(minStrikeSpeed, maxStrikeSpeed, impactSpeed));
             float radial01 = ComputeRadialPosition(worldContactPoint, up);
+
+            OnStruck?.Invoke(this, intensity01, worldContactPoint);
 
             if (soundBank != null &&
                 soundBank.TryPickClip(intensity01, radial01, out AudioClip clip, out float volume, out float pitch))
