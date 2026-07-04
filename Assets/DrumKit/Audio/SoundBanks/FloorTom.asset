@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 072e38a4202282342ba806ea28f943ba, type: 3}
+  m_Name: FloorTom
+  m_EditorClassIdentifier:
+  layers:
+  - minIntensity: 0
+    maxIntensity: 0.55
+    clips:
+    - {fileID: 8300000, guid: 646434742ae94bc418c59b3457031622, type: 3}
+    volumeRange: {x: 0.5, y: 0.7}
+    pitchSemitoneJitter: {x: -4.5, y: -3.8}
+  - minIntensity: 0.55
+    maxIntensity: 1
+    clips:
+    - {fileID: 8300000, guid: 646434742ae94bc418c59b3457031622, type: 3}
+    volumeRange: {x: 0.85, y: 1}
+    pitchSemitoneJitter: {x: -4.2, y: -3.5}
+  chokeFadeSeconds: 0.08
+  edgeBrightnessSemitones: 0

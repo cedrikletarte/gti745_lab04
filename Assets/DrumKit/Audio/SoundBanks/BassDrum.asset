@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 072e38a4202282342ba806ea28f943ba, type: 3}
+  m_Name: BassDrum
+  m_EditorClassIdentifier:
+  layers:
+  - minIntensity: 0
+    maxIntensity: 0.55
+    clips:
+    - {fileID: 8300000, guid: fcb4f2ba848618c4c9d876fa037c6e19, type: 3}
+    volumeRange: {x: 0.5, y: 0.75}
+    pitchSemitoneJitter: {x: -0.5, y: 0.5}
+  - minIntensity: 0.55
+    maxIntensity: 1
+    clips:
+    - {fileID: 8300000, guid: 9adcbd9976f5b6747b68a98bb3bdedc2, type: 3}
+    volumeRange: {x: 0.85, y: 1}
+    pitchSemitoneJitter: {x: -0.3, y: 0.3}
+  chokeFadeSeconds: 0.08
+  edgeBrightnessSemitones: 0
