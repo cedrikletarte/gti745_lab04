@@ -844,8 +844,55 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: cc08ce904dd19b54096514c70a547ffa, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1624430823}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cc08ce904dd19b54096514c70a547ffa, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1030187630}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cc08ce904dd19b54096514c70a547ffa, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1030187629}
   m_SourcePrefab: {fileID: 100100000, guid: cc08ce904dd19b54096514c70a547ffa, type: 3}
+--- !u!1 &1030187628 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: cc08ce904dd19b54096514c70a547ffa, type: 3}
+  m_PrefabInstance: {fileID: 1030187627}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1030187629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030187628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4af06af24a744142a64a5cfb3847745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DrumKit.Striking.DrumstickCollisionClamp
+  tipLocalPoint: {x: 0, y: 0, z: 0}
+  tipRadius: 0.012
+  correctionSpeed: 40
+--- !u!135 &1030187630
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030187628}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.012
+  m_Center: {x: 0, y: 0, z: 0.0491}
 --- !u!4 &1229049976 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 895905358974398794, guid: 4e68d444c98db7245b7cbad1f2861905, type: 3}
@@ -1002,8 +1049,55 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: cc08ce904dd19b54096514c70a547ffa, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1963943884}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cc08ce904dd19b54096514c70a547ffa, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2059650065}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cc08ce904dd19b54096514c70a547ffa, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2059650064}
   m_SourcePrefab: {fileID: 100100000, guid: cc08ce904dd19b54096514c70a547ffa, type: 3}
+--- !u!1 &2059650063 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: cc08ce904dd19b54096514c70a547ffa, type: 3}
+  m_PrefabInstance: {fileID: 2059650062}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2059650064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2059650063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4af06af24a744142a64a5cfb3847745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DrumKit.Striking.DrumstickCollisionClamp
+  tipLocalPoint: {x: 0, y: 0, z: 0}
+  tipRadius: 0.012
+  correctionSpeed: 40
+--- !u!135 &2059650065
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2059650063}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.012
+  m_Center: {x: 0, y: 0, z: 0.0491}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

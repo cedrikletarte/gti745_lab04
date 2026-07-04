@@ -107,6 +107,19 @@ namespace DrumKit.Striking
         }
 
         /// <summary>
+        /// Re-syncs the tracked position to where the tip is right now, without sweeping
+        /// for a hit along the way there. For use when something external (e.g. a
+        /// drumstick collision clamp releasing after being held at a surface) teleports the
+        /// tip in a way that isn't a real swing - without this, the next FixedUpdate would
+        /// sweep across that jump and could register a spurious second strike.
+        /// </summary>
+        public void ResetTrackedPosition()
+        {
+            m_PreviousPosition = transform.position;
+            m_HasPreviousPosition = true;
+        }
+
+        /// <summary>
         /// Returns true if enough time has passed since the last strike this
         /// striker landed on the given piece, and records the attempt.
         /// </summary>

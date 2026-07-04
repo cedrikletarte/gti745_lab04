@@ -62,5 +62,17 @@ namespace DrumKit.Striking
         }
 
         public Vector3 GetVelocity() => m_LastVelocity;
+
+        /// <summary>
+        /// Clears the sample buffer so a teleport that isn't a real hand motion (e.g. a
+        /// collision clamp releasing) doesn't get read back as a burst of velocity for the
+        /// next few samples.
+        /// </summary>
+        public void ResetTracking()
+        {
+            m_FilledSamples = 0;
+            m_SampleIndex = 0;
+            m_LastVelocity = Vector3.zero;
+        }
     }
 }
