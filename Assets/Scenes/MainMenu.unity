@@ -2776,8 +2776,12 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedComponents:
+    - {fileID: 375889339027861984, guid: 4e68d444c98db7245b7cbad1f2861905, type: 3}
+    - {fileID: 4147245351081470754, guid: 4e68d444c98db7245b7cbad1f2861905, type: 3}
+    m_RemovedGameObjects:
+    - {fileID: 2090782745888629312, guid: 4e68d444c98db7245b7cbad1f2861905, type: 3}
+    - {fileID: 8280014359884417469, guid: 4e68d444c98db7245b7cbad1f2861905, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e68d444c98db7245b7cbad1f2861905, type: 3}

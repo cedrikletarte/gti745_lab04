@@ -198,11 +198,6 @@ namespace DrumKit.Striking
                     }
                 }
 
-                if (strongestDistance > 0.001f)
-                {
-                    Debug.Log($"[DrumKit DEBUG] '{branch.Target.name}' penetration detected: distance={strongestDistance:F3}m correction={strongestCorrection}");
-                }
-
                 branch.CurrentCorrection = Vector3.Lerp(branch.CurrentCorrection, strongestCorrection, Time.deltaTime * correctionSpeed);
                 Vector3 finalPosition = restWorldPosition + branch.CurrentCorrection;
                 branch.Target.SetPositionAndRotation(finalPosition, restWorldRotation);

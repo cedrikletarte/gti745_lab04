@@ -102,41 +102,13 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 657184242222895506, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8280014359916304116}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 657184243640684908, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 375889339027861984}
-    - targetCorrespondingSourceObject: {fileID: 657184242222895507, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4147245351081470754}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
 --- !u!4 &895905357452497192 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 657184242118504721, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
   m_PrefabInstance: {fileID: 391862349522690105}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &895905357556642218 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 657184242222895507, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
-  m_PrefabInstance: {fileID: 391862349522690105}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &4147245351081470754
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 895905357556642218}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a925a8d19ad4f3e498e59a5428ed0f9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DrumKit.Striking.HandVisualClampGroup
-  padding: 0.015
-  correctionSpeed: 40
-  drumLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
 --- !u!4 &895905357556642219 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 657184242222895506, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
@@ -147,28 +119,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 657184243640684915, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
   m_PrefabInstance: {fileID: 391862349522690105}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &895905358974398805 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 657184243640684908, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
-  m_PrefabInstance: {fileID: 391862349522690105}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &375889339027861984
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 895905358974398805}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a925a8d19ad4f3e498e59a5428ed0f9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DrumKit.Striking.HandVisualClampGroup
-  padding: 0.015
-  correctionSpeed: 40
-  drumLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
 --- !u!114 &1030736061376160667 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 810019319561094050, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
