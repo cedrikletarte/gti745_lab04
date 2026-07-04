@@ -351,9 +351,12 @@ namespace DrumKit.EditorTools
                     joint = Undo.AddComponent<ConfigurableJoint>(go);
                 }
                 joint.connectedBody = null; // anchored to the world, not to another Rigidbody
-                joint.autoConfigureConnectedAnchor = false;
                 joint.anchor = Vector3.zero; // pivot at the cymbal's own origin (its mount point)
-                joint.connectedAnchor = go.transform.position;
+                // Auto-configure so the connected anchor is computed from wherever this instance
+                // actually sits at runtime, instead of baking today's world position into the
+                // prefab - a hand-picked connectedAnchor breaks the moment the same prefab is
+                // placed at a different position/rotation in another scene.
+                joint.autoConfigureConnectedAnchor = true;
                 joint.xMotion = ConfigurableJointMotion.Locked;
                 joint.yMotion = ConfigurableJointMotion.Locked;
                 joint.zMotion = ConfigurableJointMotion.Locked;
