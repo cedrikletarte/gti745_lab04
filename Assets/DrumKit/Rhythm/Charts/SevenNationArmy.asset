@@ -1,0 +1,1418 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2117383aedc4c6439138daaff529d60, type: 3}
+  m_Name: SevenNationArmy
+  m_EditorClassIdentifier: Assembly-CSharp::DrumKit.Rhythm.SongChart
+  song: {fileID: 8300000, guid: 0b192157bb26830448f2d884f6c44c37, type: 3}
+  bpm: 124
+  startOffsetSeconds: 0
+  notes:
+  - timeSeconds: 7.97
+    targetPiece: 0
+  - timeSeconds: 7.97
+    targetPiece: 4
+  - timeSeconds: 8.4696
+    targetPiece: 0
+  - timeSeconds: 8.4696
+    targetPiece: 4
+  - timeSeconds: 8.9795
+    targetPiece: 0
+  - timeSeconds: 8.9795
+    targetPiece: 4
+  - timeSeconds: 9.4801
+    targetPiece: 0
+  - timeSeconds: 9.4801
+    targetPiece: 4
+  - timeSeconds: 9.97
+    targetPiece: 0
+  - timeSeconds: 9.97
+    targetPiece: 3
+  - timeSeconds: 10.46
+    targetPiece: 0
+  - timeSeconds: 10.46
+    targetPiece: 4
+  - timeSeconds: 10.93
+    targetPiece: 0
+  - timeSeconds: 10.93
+    targetPiece: 3
+  - timeSeconds: 11.43
+    targetPiece: 0
+  - timeSeconds: 11.43
+    targetPiece: 4
+  - timeSeconds: 11.9005
+    targetPiece: 0
+  - timeSeconds: 11.9108
+    targetPiece: 4
+  - timeSeconds: 12.3797
+    targetPiece: 0
+  - timeSeconds: 12.3797
+    targetPiece: 4
+  - timeSeconds: 12.8804
+    targetPiece: 0
+  - timeSeconds: 12.8804
+    targetPiece: 4
+  - timeSeconds: 13.3698
+    targetPiece: 0
+  - timeSeconds: 13.3698
+    targetPiece: 3
+  - timeSeconds: 13.86
+    targetPiece: 0
+  - timeSeconds: 13.86
+    targetPiece: 4
+  - timeSeconds: 14.34
+    targetPiece: 0
+  - timeSeconds: 14.34
+    targetPiece: 4
+  - timeSeconds: 14.83
+    targetPiece: 0
+  - timeSeconds: 14.83
+    targetPiece: 3
+  - timeSeconds: 15.3
+    targetPiece: 0
+  - timeSeconds: 15.3
+    targetPiece: 4
+  - timeSeconds: 15.7903
+    targetPiece: 0
+  - timeSeconds: 15.7903
+    targetPiece: 3
+  - timeSeconds: 16.2697
+    targetPiece: 0
+  - timeSeconds: 16.2697
+    targetPiece: 4
+  - timeSeconds: 16.7602
+    targetPiece: 0
+  - timeSeconds: 16.7602
+    targetPiece: 4
+  - timeSeconds: 17.2396
+    targetPiece: 0
+  - timeSeconds: 17.72
+    targetPiece: 0
+  - timeSeconds: 17.72
+    targetPiece: 4
+  - timeSeconds: 18.2104
+    targetPiece: 0
+  - timeSeconds: 18.2104
+    targetPiece: 3
+  - timeSeconds: 18.68
+    targetPiece: 0
+  - timeSeconds: 18.68
+    targetPiece: 4
+  - timeSeconds: 19.1605
+    targetPiece: 0
+  - timeSeconds: 19.1605
+    targetPiece: 4
+  - timeSeconds: 19.63
+    targetPiece: 0
+  - timeSeconds: 19.63
+    targetPiece: 4
+  - timeSeconds: 20.1204
+    targetPiece: 0
+  - timeSeconds: 20.1204
+    targetPiece: 4
+  - timeSeconds: 20.59
+    targetPiece: 0
+  - timeSeconds: 20.59
+    targetPiece: 4
+  - timeSeconds: 21.0704
+    targetPiece: 0
+  - timeSeconds: 21.0704
+    targetPiece: 4
+  - timeSeconds: 21.5499
+    targetPiece: 0
+  - timeSeconds: 22.0298
+    targetPiece: 0
+  - timeSeconds: 22.0298
+    targetPiece: 4
+  - timeSeconds: 22.49
+    targetPiece: 0
+  - timeSeconds: 22.49
+    targetPiece: 4
+  - timeSeconds: 22.9798
+    targetPiece: 0
+  - timeSeconds: 22.9798
+    targetPiece: 4
+  - timeSeconds: 23.4498
+    targetPiece: 0
+  - timeSeconds: 23.9204
+    targetPiece: 0
+  - timeSeconds: 23.9204
+    targetPiece: 4
+  - timeSeconds: 24.3997
+    targetPiece: 0
+  - timeSeconds: 24.3997
+    targetPiece: 4
+  - timeSeconds: 24.8703
+    targetPiece: 0
+  - timeSeconds: 24.8703
+    targetPiece: 4
+  - timeSeconds: 25.3399
+    targetPiece: 0
+  - timeSeconds: 25.8204
+    targetPiece: 0
+  - timeSeconds: 26.2999
+    targetPiece: 0
+  - timeSeconds: 26.7804
+    targetPiece: 0
+  - timeSeconds: 26.7804
+    targetPiece: 3
+  - timeSeconds: 27.2602
+    targetPiece: 0
+  - timeSeconds: 27.2602
+    targetPiece: 3
+  - timeSeconds: 27.7502
+    targetPiece: 0
+  - timeSeconds: 27.7502
+    targetPiece: 4
+  - timeSeconds: 28.2302
+    targetPiece: 0
+  - timeSeconds: 28.2302
+    targetPiece: 3
+  - timeSeconds: 28.7101
+    targetPiece: 0
+  - timeSeconds: 28.7101
+    targetPiece: 3
+  - timeSeconds: 29.18
+    targetPiece: 0
+  - timeSeconds: 29.1899
+    targetPiece: 4
+  - timeSeconds: 29.6599
+    targetPiece: 0
+  - timeSeconds: 30.1399
+    targetPiece: 0
+  - timeSeconds: 30.6099
+    targetPiece: 0
+  - timeSeconds: 30.6198
+    targetPiece: 4
+  - timeSeconds: 31.08
+    targetPiece: 0
+  - timeSeconds: 31.0902
+    targetPiece: 4
+  - timeSeconds: 31.57
+    targetPiece: 0
+  - timeSeconds: 31.5802
+    targetPiece: 1
+  - timeSeconds: 31.5802
+    targetPiece: 4
+  - timeSeconds: 32.06
+    targetPiece: 0
+  - timeSeconds: 32.55
+    targetPiece: 4
+  - timeSeconds: 32.5602
+    targetPiece: 0
+  - timeSeconds: 32.5602
+    targetPiece: 1
+  - timeSeconds: 33.04
+    targetPiece: 0
+  - timeSeconds: 33.04
+    targetPiece: 3
+  - timeSeconds: 33.5304
+    targetPiece: 0
+  - timeSeconds: 33.5304
+    targetPiece: 4
+  - timeSeconds: 33.5503
+    targetPiece: 1
+  - timeSeconds: 33.9999
+    targetPiece: 0
+  - timeSeconds: 34.0099
+    targetPiece: 4
+  - timeSeconds: 34.4804
+    targetPiece: 0
+  - timeSeconds: 34.4804
+    targetPiece: 4
+  - timeSeconds: 34.4904
+    targetPiece: 1
+  - timeSeconds: 34.96
+    targetPiece: 0
+  - timeSeconds: 35.4496
+    targetPiece: 0
+  - timeSeconds: 35.4496
+    targetPiece: 1
+  - timeSeconds: 35.4596
+    targetPiece: 4
+  - timeSeconds: 35.93
+    targetPiece: 0
+  - timeSeconds: 36.4095
+    targetPiece: 0
+  - timeSeconds: 36.4095
+    targetPiece: 4
+  - timeSeconds: 36.89
+    targetPiece: 0
+  - timeSeconds: 37.38
+    targetPiece: 0
+  - timeSeconds: 37.38
+    targetPiece: 3
+  - timeSeconds: 37.39
+    targetPiece: 1
+  - timeSeconds: 37.84
+    targetPiece: 0
+  - timeSeconds: 37.84
+    targetPiece: 3
+  - timeSeconds: 38.33
+    targetPiece: 1
+  - timeSeconds: 38.33
+    targetPiece: 4
+  - timeSeconds: 38.34
+    targetPiece: 0
+  - timeSeconds: 38.81
+    targetPiece: 0
+  - timeSeconds: 39.2996
+    targetPiece: 0
+  - timeSeconds: 39.2996
+    targetPiece: 1
+  - timeSeconds: 39.78
+    targetPiece: 0
+  - timeSeconds: 39.7901
+    targetPiece: 4
+  - timeSeconds: 40.2696
+    targetPiece: 0
+  - timeSeconds: 40.2696
+    targetPiece: 1
+  - timeSeconds: 40.2696
+    targetPiece: 3
+  - timeSeconds: 40.73
+    targetPiece: 0
+  - timeSeconds: 40.75
+    targetPiece: 4
+  - timeSeconds: 41.22
+    targetPiece: 0
+  - timeSeconds: 41.22
+    targetPiece: 1
+  - timeSeconds: 41.23
+    targetPiece: 4
+  - timeSeconds: 41.7
+    targetPiece: 0
+  - timeSeconds: 42.18
+    targetPiece: 0
+  - timeSeconds: 42.18
+    targetPiece: 1
+  - timeSeconds: 42.18
+    targetPiece: 4
+  - timeSeconds: 42.66
+    targetPiece: 0
+  - timeSeconds: 42.66
+    targetPiece: 4
+  - timeSeconds: 43.1395
+    targetPiece: 0
+  - timeSeconds: 43.1395
+    targetPiece: 1
+  - timeSeconds: 43.62
+    targetPiece: 0
+  - timeSeconds: 43.62
+    targetPiece: 3
+  - timeSeconds: 44.1095
+    targetPiece: 0
+  - timeSeconds: 44.1095
+    targetPiece: 1
+  - timeSeconds: 44.1095
+    targetPiece: 4
+  - timeSeconds: 44.5904
+    targetPiece: 0
+  - timeSeconds: 44.5904
+    targetPiece: 4
+  - timeSeconds: 45.0696
+    targetPiece: 0
+  - timeSeconds: 45.08
+    targetPiece: 1
+  - timeSeconds: 45.08
+    targetPiece: 4
+  - timeSeconds: 45.5602
+    targetPiece: 0
+  - timeSeconds: 45.5696
+    targetPiece: 4
+  - timeSeconds: 46.0498
+    targetPiece: 0
+  - timeSeconds: 46.0696
+    targetPiece: 1
+  - timeSeconds: 46.0696
+    targetPiece: 4
+  - timeSeconds: 46.58
+    targetPiece: 0
+  - timeSeconds: 47.1102
+    targetPiece: 0
+  - timeSeconds: 47.5904
+    targetPiece: 0
+  - timeSeconds: 48.0696
+    targetPiece: 0
+  - timeSeconds: 48.5904
+    targetPiece: 0
+  - timeSeconds: 48.6197
+    targetPiece: 6
+  - timeSeconds: 49.1202
+    targetPiece: 0
+  - timeSeconds: 49.6405
+    targetPiece: 0
+  - timeSeconds: 50.1304
+    targetPiece: 0
+  - timeSeconds: 50.6197
+    targetPiece: 0
+  - timeSeconds: 50.6197
+    targetPiece: 6
+  - timeSeconds: 51.1102
+    targetPiece: 1
+  - timeSeconds: 51.5996
+    targetPiece: 0
+  - timeSeconds: 52.1003
+    targetPiece: 1
+  - timeSeconds: 52.1003
+    targetPiece: 6
+  - timeSeconds: 52.5791
+    targetPiece: 0
+  - timeSeconds: 53.0696
+    targetPiece: 1
+  - timeSeconds: 53.0696
+    targetPiece: 5
+  - timeSeconds: 53.0696
+    targetPiece: 6
+  - timeSeconds: 53.53
+    targetPiece: 0
+  - timeSeconds: 54.0396
+    targetPiece: 1
+  - timeSeconds: 54.0597
+    targetPiece: 6
+  - timeSeconds: 54.5106
+    targetPiece: 0
+  - timeSeconds: 54.9901
+    targetPiece: 1
+  - timeSeconds: 55.0097
+    targetPiece: 5
+  - timeSeconds: 55.5099
+    targetPiece: 0
+  - timeSeconds: 55.8203
+    targetPiece: 0
+  - timeSeconds: 56.1802
+    targetPiece: 1
+  - timeSeconds: 56.47
+    targetPiece: 6
+  - timeSeconds: 56.4893
+    targetPiece: 0
+  - timeSeconds: 57.0103
+    targetPiece: 1
+  - timeSeconds: 57.4704
+    targetPiece: 0
+  - timeSeconds: 57.9497
+    targetPiece: 1
+  - timeSeconds: 57.9497
+    targetPiece: 6
+  - timeSeconds: 58.42
+    targetPiece: 0
+  - timeSeconds: 58.9298
+    targetPiece: 1
+  - timeSeconds: 59.4
+    targetPiece: 0
+  - timeSeconds: 59.8997
+    targetPiece: 1
+  - timeSeconds: 60.3801
+    targetPiece: 0
+  - timeSeconds: 60.3801
+    targetPiece: 6
+  - timeSeconds: 60.89
+    targetPiece: 1
+  - timeSeconds: 61.3704
+    targetPiece: 0
+  - timeSeconds: 61.8599
+    targetPiece: 1
+  - timeSeconds: 62.3303
+    targetPiece: 0
+  - timeSeconds: 62.8304
+    targetPiece: 1
+  - timeSeconds: 62.8304
+    targetPiece: 6
+  - timeSeconds: 63.31
+    targetPiece: 0
+  - timeSeconds: 63.3203
+    targetPiece: 6
+  - timeSeconds: 63.6297
+    targetPiece: 0
+  - timeSeconds: 63.9999
+    targetPiece: 1
+  - timeSeconds: 64.3102
+    targetPiece: 0
+  - timeSeconds: 64.8002
+    targetPiece: 1
+  - timeSeconds: 65.28
+    targetPiece: 0
+  - timeSeconds: 65.7904
+    targetPiece: 1
+  - timeSeconds: 65.7904
+    targetPiece: 6
+  - timeSeconds: 66.2807
+    targetPiece: 0
+  - timeSeconds: 66.7699
+    targetPiece: 0
+  - timeSeconds: 67.2798
+    targetPiece: 0
+  - timeSeconds: 67.8095
+    targetPiece: 0
+  - timeSeconds: 68.0603
+    targetPiece: 1
+  - timeSeconds: 68.2606
+    targetPiece: 0
+  - timeSeconds: 68.3012
+    targetPiece: 6
+  - timeSeconds: 68.7603
+    targetPiece: 0
+  - timeSeconds: 69.2899
+    targetPiece: 0
+  - timeSeconds: 69.7896
+    targetPiece: 0
+  - timeSeconds: 70.3
+    targetPiece: 0
+  - timeSeconds: 70.3097
+    targetPiece: 6
+  - timeSeconds: 78.4599
+    targetPiece: 0
+  - timeSeconds: 78.4693
+    targetPiece: 4
+  - timeSeconds: 78.9699
+    targetPiece: 0
+  - timeSeconds: 78.9699
+    targetPiece: 4
+  - timeSeconds: 79.4695
+    targetPiece: 0
+  - timeSeconds: 79.4798
+    targetPiece: 4
+  - timeSeconds: 79.9701
+    targetPiece: 0
+  - timeSeconds: 79.9701
+    targetPiece: 4
+  - timeSeconds: 80.4602
+    targetPiece: 0
+  - timeSeconds: 80.4602
+    targetPiece: 4
+  - timeSeconds: 80.9404
+    targetPiece: 0
+  - timeSeconds: 80.9599
+    targetPiece: 4
+  - timeSeconds: 81.4503
+    targetPiece: 0
+  - timeSeconds: 81.9398
+    targetPiece: 0
+  - timeSeconds: 81.9398
+    targetPiece: 4
+  - timeSeconds: 82.4301
+    targetPiece: 0
+  - timeSeconds: 82.4301
+    targetPiece: 4
+  - timeSeconds: 82.9003
+    targetPiece: 4
+  - timeSeconds: 82.9095
+    targetPiece: 0
+  - timeSeconds: 83.4
+    targetPiece: 0
+  - timeSeconds: 83.4
+    targetPiece: 4
+  - timeSeconds: 83.8804
+    targetPiece: 3
+  - timeSeconds: 83.8896
+    targetPiece: 0
+  - timeSeconds: 84.3801
+    targetPiece: 0
+  - timeSeconds: 84.8595
+    targetPiece: 3
+  - timeSeconds: 84.8696
+    targetPiece: 0
+  - timeSeconds: 85.3602
+    targetPiece: 0
+  - timeSeconds: 85.3602
+    targetPiece: 3
+  - timeSeconds: 85.8599
+    targetPiece: 0
+  - timeSeconds: 85.8599
+    targetPiece: 3
+  - timeSeconds: 86.3302
+    targetPiece: 0
+  - timeSeconds: 86.8202
+    targetPiece: 0
+  - timeSeconds: 87.3204
+    targetPiece: 0
+  - timeSeconds: 87.3204
+    targetPiece: 4
+  - timeSeconds: 87.8001
+    targetPiece: 0
+  - timeSeconds: 87.8001
+    targetPiece: 4
+  - timeSeconds: 88.29
+    targetPiece: 0
+  - timeSeconds: 88.29
+    targetPiece: 4
+  - timeSeconds: 88.7695
+    targetPiece: 0
+  - timeSeconds: 88.7795
+    targetPiece: 4
+  - timeSeconds: 89.25
+    targetPiece: 0
+  - timeSeconds: 89.25
+    targetPiece: 3
+  - timeSeconds: 89.7295
+    targetPiece: 0
+  - timeSeconds: 89.7295
+    targetPiece: 4
+  - timeSeconds: 90.2099
+    targetPiece: 0
+  - timeSeconds: 90.2099
+    targetPiece: 4
+  - timeSeconds: 90.6995
+    targetPiece: 0
+  - timeSeconds: 90.6995
+    targetPiece: 3
+  - timeSeconds: 91.19
+    targetPiece: 0
+  - timeSeconds: 91.6795
+    targetPiece: 0
+  - timeSeconds: 91.6795
+    targetPiece: 3
+  - timeSeconds: 92.1701
+    targetPiece: 0
+  - timeSeconds: 92.6698
+    targetPiece: 0
+  - timeSeconds: 92.6698
+    targetPiece: 3
+  - timeSeconds: 93.1603
+    targetPiece: 0
+  - timeSeconds: 93.1603
+    targetPiece: 3
+  - timeSeconds: 93.6295
+    targetPiece: 0
+  - timeSeconds: 93.6295
+    targetPiece: 4
+  - timeSeconds: 94.1201
+    targetPiece: 0
+  - timeSeconds: 94.6198
+    targetPiece: 0
+  - timeSeconds: 95.1002
+    targetPiece: 0
+  - timeSeconds: 95.1002
+    targetPiece: 4
+  - timeSeconds: 95.5897
+    targetPiece: 0
+  - timeSeconds: 96.0599
+    targetPiece: 0
+  - timeSeconds: 96.0599
+    targetPiece: 4
+  - timeSeconds: 96.5504
+    targetPiece: 0
+  - timeSeconds: 96.5504
+    targetPiece: 4
+  - timeSeconds: 97.0299
+    targetPiece: 0
+  - timeSeconds: 97.5103
+    targetPiece: 0
+  - timeSeconds: 98.0006
+    targetPiece: 0
+  - timeSeconds: 98.4895
+    targetPiece: 0
+  - timeSeconds: 98.4895
+    targetPiece: 4
+  - timeSeconds: 98.9704
+    targetPiece: 0
+  - timeSeconds: 98.9704
+    targetPiece: 3
+  - timeSeconds: 99.4501
+    targetPiece: 0
+  - timeSeconds: 99.4501
+    targetPiece: 4
+  - timeSeconds: 99.9399
+    targetPiece: 0
+  - timeSeconds: 99.9399
+    targetPiece: 4
+  - timeSeconds: 100.41
+    targetPiece: 0
+  - timeSeconds: 100.42
+    targetPiece: 4
+  - timeSeconds: 100.89
+    targetPiece: 0
+  - timeSeconds: 100.9
+    targetPiece: 4
+  - timeSeconds: 101.1
+    targetPiece: 0
+  - timeSeconds: 101.39
+    targetPiece: 4
+  - timeSeconds: 101.881
+    targetPiece: 0
+  - timeSeconds: 101.881
+    targetPiece: 3
+  - timeSeconds: 102.35
+    targetPiece: 0
+  - timeSeconds: 102.36
+    targetPiece: 1
+  - timeSeconds: 102.86
+    targetPiece: 0
+  - timeSeconds: 102.86
+    targetPiece: 3
+  - timeSeconds: 103.329
+    targetPiece: 0
+  - timeSeconds: 103.329
+    targetPiece: 1
+  - timeSeconds: 103.839
+    targetPiece: 0
+  - timeSeconds: 104.32
+    targetPiece: 0
+  - timeSeconds: 104.32
+    targetPiece: 1
+  - timeSeconds: 104.78
+    targetPiece: 0
+  - timeSeconds: 105.269
+    targetPiece: 1
+  - timeSeconds: 105.279
+    targetPiece: 0
+  - timeSeconds: 105.76
+    targetPiece: 0
+  - timeSeconds: 106.25
+    targetPiece: 0
+  - timeSeconds: 106.25
+    targetPiece: 1
+  - timeSeconds: 106.73
+    targetPiece: 0
+  - timeSeconds: 106.73
+    targetPiece: 4
+  - timeSeconds: 107.21
+    targetPiece: 0
+  - timeSeconds: 107.21
+    targetPiece: 1
+  - timeSeconds: 107.22
+    targetPiece: 4
+  - timeSeconds: 107.7
+    targetPiece: 0
+  - timeSeconds: 107.7
+    targetPiece: 3
+  - timeSeconds: 108.18
+    targetPiece: 0
+  - timeSeconds: 108.18
+    targetPiece: 1
+  - timeSeconds: 108.66
+    targetPiece: 0
+  - timeSeconds: 109.15
+    targetPiece: 0
+  - timeSeconds: 109.15
+    targetPiece: 1
+  - timeSeconds: 109.15
+    targetPiece: 3
+  - timeSeconds: 109.62
+    targetPiece: 0
+  - timeSeconds: 109.63
+    targetPiece: 4
+  - timeSeconds: 110.1
+    targetPiece: 0
+  - timeSeconds: 110.1
+    targetPiece: 1
+  - timeSeconds: 110.11
+    targetPiece: 4
+  - timeSeconds: 110.58
+    targetPiece: 0
+  - timeSeconds: 111.05
+    targetPiece: 0
+  - timeSeconds: 111.05
+    targetPiece: 1
+  - timeSeconds: 111.05
+    targetPiece: 4
+  - timeSeconds: 111.53
+    targetPiece: 0
+  - timeSeconds: 111.53
+    targetPiece: 4
+  - timeSeconds: 112.01
+    targetPiece: 0
+  - timeSeconds: 112.01
+    targetPiece: 1
+  - timeSeconds: 112.01
+    targetPiece: 3
+  - timeSeconds: 112.49
+    targetPiece: 0
+  - timeSeconds: 112.96
+    targetPiece: 1
+  - timeSeconds: 112.97
+    targetPiece: 0
+  - timeSeconds: 112.97
+    targetPiece: 4
+  - timeSeconds: 113.44
+    targetPiece: 0
+  - timeSeconds: 113.92
+    targetPiece: 1
+  - timeSeconds: 113.93
+    targetPiece: 0
+  - timeSeconds: 113.93
+    targetPiece: 3
+  - timeSeconds: 114.41
+    targetPiece: 0
+  - timeSeconds: 114.41
+    targetPiece: 4
+  - timeSeconds: 114.869
+    targetPiece: 1
+  - timeSeconds: 114.869
+    targetPiece: 4
+  - timeSeconds: 114.88
+    targetPiece: 0
+  - timeSeconds: 115.36
+    targetPiece: 0
+  - timeSeconds: 115.36
+    targetPiece: 3
+  - timeSeconds: 115.85
+    targetPiece: 1
+  - timeSeconds: 115.86
+    targetPiece: 0
+  - timeSeconds: 115.86
+    targetPiece: 4
+  - timeSeconds: 116.33
+    targetPiece: 0
+  - timeSeconds: 116.33
+    targetPiece: 4
+  - timeSeconds: 116.81
+    targetPiece: 0
+  - timeSeconds: 116.83
+    targetPiece: 1
+  - timeSeconds: 116.83
+    targetPiece: 4
+  - timeSeconds: 117.321
+    targetPiece: 0
+  - timeSeconds: 117.82
+    targetPiece: 0
+  - timeSeconds: 118.29
+    targetPiece: 0
+  - timeSeconds: 118.799
+    targetPiece: 0
+  - timeSeconds: 119.31
+    targetPiece: 0
+  - timeSeconds: 119.8
+    targetPiece: 0
+  - timeSeconds: 120.31
+    targetPiece: 0
+  - timeSeconds: 120.809
+    targetPiece: 0
+  - timeSeconds: 121.32
+    targetPiece: 0
+  - timeSeconds: 121.349
+    targetPiece: 6
+  - timeSeconds: 121.82
+    targetPiece: 1
+  - timeSeconds: 122.32
+    targetPiece: 0
+  - timeSeconds: 122.8
+    targetPiece: 1
+  - timeSeconds: 122.8
+    targetPiece: 6
+  - timeSeconds: 123.29
+    targetPiece: 0
+  - timeSeconds: 123.79
+    targetPiece: 1
+  - timeSeconds: 124.26
+    targetPiece: 0
+  - timeSeconds: 124.76
+    targetPiece: 1
+  - timeSeconds: 124.76
+    targetPiece: 6
+  - timeSeconds: 125.24
+    targetPiece: 0
+  - timeSeconds: 125.75
+    targetPiece: 1
+  - timeSeconds: 126.23
+    targetPiece: 0
+  - timeSeconds: 126.55
+    targetPiece: 0
+  - timeSeconds: 126.93
+    targetPiece: 1
+  - timeSeconds: 127.23
+    targetPiece: 0
+  - timeSeconds: 127.74
+    targetPiece: 6
+  - timeSeconds: 127.75
+    targetPiece: 1
+  - timeSeconds: 128.22
+    targetPiece: 0
+  - timeSeconds: 128.73
+    targetPiece: 1
+  - timeSeconds: 129.21
+    targetPiece: 0
+  - timeSeconds: 129.71
+    targetPiece: 1
+  - timeSeconds: 130.18
+    targetPiece: 0
+  - timeSeconds: 130.69
+    targetPiece: 1
+  - timeSeconds: 131.16
+    targetPiece: 0
+  - timeSeconds: 131.67
+    targetPiece: 1
+  - timeSeconds: 131.7
+    targetPiece: 6
+  - timeSeconds: 132.13
+    targetPiece: 0
+  - timeSeconds: 132.639
+    targetPiece: 1
+  - timeSeconds: 133.12
+    targetPiece: 0
+  - timeSeconds: 133.6
+    targetPiece: 6
+  - timeSeconds: 133.61
+    targetPiece: 1
+  - timeSeconds: 134.08
+    targetPiece: 0
+  - timeSeconds: 134.41
+    targetPiece: 0
+  - timeSeconds: 134.82
+    targetPiece: 1
+  - timeSeconds: 135.12
+    targetPiece: 0
+  - timeSeconds: 135.61
+    targetPiece: 1
+  - timeSeconds: 136.07
+    targetPiece: 0
+  - timeSeconds: 136.58
+    targetPiece: 1
+  - timeSeconds: 137.05
+    targetPiece: 0
+  - timeSeconds: 137.57
+    targetPiece: 1
+  - timeSeconds: 138.03
+    targetPiece: 0
+  - timeSeconds: 138.53
+    targetPiece: 1
+  - timeSeconds: 139
+    targetPiece: 0
+  - timeSeconds: 139.51
+    targetPiece: 1
+  - timeSeconds: 139.99
+    targetPiece: 0
+  - timeSeconds: 140.49
+    targetPiece: 1
+  - timeSeconds: 140.971
+    targetPiece: 0
+  - timeSeconds: 141.45
+    targetPiece: 1
+  - timeSeconds: 141.93
+    targetPiece: 0
+  - timeSeconds: 142.27
+    targetPiece: 0
+  - timeSeconds: 142.63
+    targetPiece: 1
+  - timeSeconds: 142.956
+    targetPiece: 0
+  - timeSeconds: 143.45
+    targetPiece: 1
+  - timeSeconds: 143.93
+    targetPiece: 0
+  - timeSeconds: 144.43
+    targetPiece: 1
+  - timeSeconds: 144.89
+    targetPiece: 0
+  - timeSeconds: 145.39
+    targetPiece: 1
+  - timeSeconds: 145.86
+    targetPiece: 0
+  - timeSeconds: 146.36
+    targetPiece: 1
+  - timeSeconds: 146.83
+    targetPiece: 0
+  - timeSeconds: 147.34
+    targetPiece: 1
+  - timeSeconds: 147.81
+    targetPiece: 0
+  - timeSeconds: 148.31
+    targetPiece: 1
+  - timeSeconds: 148.31
+    targetPiece: 6
+  - timeSeconds: 148.79
+    targetPiece: 0
+  - timeSeconds: 149.28
+    targetPiece: 1
+  - timeSeconds: 149.29
+    targetPiece: 5
+  - timeSeconds: 149.78
+    targetPiece: 0
+  - timeSeconds: 150.1
+    targetPiece: 0
+  - timeSeconds: 150.45
+    targetPiece: 1
+  - timeSeconds: 150.751
+    targetPiece: 0
+  - timeSeconds: 151.24
+    targetPiece: 1
+  - timeSeconds: 151.24
+    targetPiece: 5
+  - timeSeconds: 151.72
+    targetPiece: 0
+  - timeSeconds: 152.24
+    targetPiece: 1
+  - timeSeconds: 152.74
+    targetPiece: 0
+  - timeSeconds: 153.26
+    targetPiece: 0
+  - timeSeconds: 153.75
+    targetPiece: 0
+  - timeSeconds: 154.23
+    targetPiece: 0
+  - timeSeconds: 154.731
+    targetPiece: 0
+  - timeSeconds: 154.74
+    targetPiece: 6
+  - timeSeconds: 155.24
+    targetPiece: 0
+  - timeSeconds: 155.76
+    targetPiece: 0
+  - timeSeconds: 156.27
+    targetPiece: 0
+  - timeSeconds: 156.78
+    targetPiece: 0
+  - timeSeconds: 156.79
+    targetPiece: 6
+  - timeSeconds: 164.99
+    targetPiece: 4
+  - timeSeconds: 165.009
+    targetPiece: 0
+  - timeSeconds: 165.49
+    targetPiece: 0
+  - timeSeconds: 165.49
+    targetPiece: 4
+  - timeSeconds: 165.98
+    targetPiece: 0
+  - timeSeconds: 166.47
+    targetPiece: 0
+  - timeSeconds: 166.47
+    targetPiece: 4
+  - timeSeconds: 166.96
+    targetPiece: 0
+  - timeSeconds: 166.96
+    targetPiece: 4
+  - timeSeconds: 167.44
+    targetPiece: 0
+  - timeSeconds: 167.45
+    targetPiece: 4
+  - timeSeconds: 167.93
+    targetPiece: 0
+  - timeSeconds: 167.93
+    targetPiece: 3
+  - timeSeconds: 168.42
+    targetPiece: 0
+  - timeSeconds: 168.42
+    targetPiece: 4
+  - timeSeconds: 168.9
+    targetPiece: 0
+  - timeSeconds: 168.9
+    targetPiece: 3
+  - timeSeconds: 169.379
+    targetPiece: 0
+  - timeSeconds: 169.379
+    targetPiece: 4
+  - timeSeconds: 169.87
+    targetPiece: 0
+  - timeSeconds: 169.87
+    targetPiece: 4
+  - timeSeconds: 170.35
+    targetPiece: 0
+  - timeSeconds: 170.35
+    targetPiece: 4
+  - timeSeconds: 170.84
+    targetPiece: 0
+  - timeSeconds: 170.84
+    targetPiece: 4
+  - timeSeconds: 171.309
+    targetPiece: 0
+  - timeSeconds: 171.33
+    targetPiece: 4
+  - timeSeconds: 171.8
+    targetPiece: 0
+  - timeSeconds: 171.8
+    targetPiece: 4
+  - timeSeconds: 172.28
+    targetPiece: 0
+  - timeSeconds: 172.76
+    targetPiece: 0
+  - timeSeconds: 172.76
+    targetPiece: 4
+  - timeSeconds: 173.24
+    targetPiece: 0
+  - timeSeconds: 173.24
+    targetPiece: 4
+  - timeSeconds: 173.73
+    targetPiece: 0
+  - timeSeconds: 173.73
+    targetPiece: 4
+  - timeSeconds: 174.21
+    targetPiece: 0
+  - timeSeconds: 174.21
+    targetPiece: 4
+  - timeSeconds: 174.7
+    targetPiece: 0
+  - timeSeconds: 174.7
+    targetPiece: 4
+  - timeSeconds: 175.18
+    targetPiece: 0
+  - timeSeconds: 175.18
+    targetPiece: 3
+  - timeSeconds: 175.67
+    targetPiece: 0
+  - timeSeconds: 175.67
+    targetPiece: 4
+  - timeSeconds: 176.16
+    targetPiece: 0
+  - timeSeconds: 176.16
+    targetPiece: 4
+  - timeSeconds: 176.64
+    targetPiece: 0
+  - timeSeconds: 176.64
+    targetPiece: 4
+  - timeSeconds: 177.12
+    targetPiece: 0
+  - timeSeconds: 177.12
+    targetPiece: 4
+  - timeSeconds: 177.61
+    targetPiece: 0
+  - timeSeconds: 177.61
+    targetPiece: 4
+  - timeSeconds: 178.1
+    targetPiece: 0
+  - timeSeconds: 178.1
+    targetPiece: 4
+  - timeSeconds: 178.58
+    targetPiece: 0
+  - timeSeconds: 178.58
+    targetPiece: 4
+  - timeSeconds: 179.08
+    targetPiece: 0
+  - timeSeconds: 179.08
+    targetPiece: 4
+  - timeSeconds: 179.57
+    targetPiece: 0
+  - timeSeconds: 179.57
+    targetPiece: 4
+  - timeSeconds: 180.05
+    targetPiece: 0
+  - timeSeconds: 180.05
+    targetPiece: 3
+  - timeSeconds: 180.53
+    targetPiece: 0
+  - timeSeconds: 181.01
+    targetPiece: 0
+  - timeSeconds: 181.5
+    targetPiece: 0
+  - timeSeconds: 181.5
+    targetPiece: 4
+  - timeSeconds: 181.97
+    targetPiece: 0
+  - timeSeconds: 181.97
+    targetPiece: 3
+  - timeSeconds: 182.47
+    targetPiece: 0
+  - timeSeconds: 182.96
+    targetPiece: 0
+  - timeSeconds: 182.96
+    targetPiece: 4
+  - timeSeconds: 183.44
+    targetPiece: 0
+  - timeSeconds: 183.44
+    targetPiece: 4
+  - timeSeconds: 183.929
+    targetPiece: 0
+  - timeSeconds: 183.929
+    targetPiece: 4
+  - timeSeconds: 184.42
+    targetPiece: 0
+  - timeSeconds: 184.42
+    targetPiece: 4
+  - timeSeconds: 184.91
+    targetPiece: 0
+  - timeSeconds: 184.91
+    targetPiece: 4
+  - timeSeconds: 185.41
+    targetPiece: 0
+  - timeSeconds: 185.41
+    targetPiece: 4
+  - timeSeconds: 185.89
+    targetPiece: 0
+  - timeSeconds: 185.89
+    targetPiece: 4
+  - timeSeconds: 186.38
+    targetPiece: 0
+  - timeSeconds: 186.38
+    targetPiece: 4
+  - timeSeconds: 186.85
+    targetPiece: 0
+  - timeSeconds: 186.86
+    targetPiece: 4
+  - timeSeconds: 187.35
+    targetPiece: 0
+  - timeSeconds: 187.35
+    targetPiece: 3
+  - timeSeconds: 187.84
+    targetPiece: 0
+  - timeSeconds: 187.84
+    targetPiece: 3
+  - timeSeconds: 188.331
+    targetPiece: 0
+  - timeSeconds: 188.331
+    targetPiece: 3
+  - timeSeconds: 188.82
+    targetPiece: 0
+  - timeSeconds: 188.82
+    targetPiece: 3
+  - timeSeconds: 189.31
+    targetPiece: 3
+  - timeSeconds: 189.32
+    targetPiece: 0
+  - timeSeconds: 189.81
+    targetPiece: 0
+  - timeSeconds: 189.81
+    targetPiece: 3
+  - timeSeconds: 189.83
+    targetPiece: 1
+  - timeSeconds: 190.29
+    targetPiece: 0
+  - timeSeconds: 190.29
+    targetPiece: 4
+  - timeSeconds: 190.79
+    targetPiece: 0
+  - timeSeconds: 190.79
+    targetPiece: 3
+  - timeSeconds: 190.82
+    targetPiece: 1
+  - timeSeconds: 191.26
+    targetPiece: 0
+  - timeSeconds: 191.26
+    targetPiece: 4
+  - timeSeconds: 191.739
+    targetPiece: 4
+  - timeSeconds: 191.749
+    targetPiece: 0
+  - timeSeconds: 191.749
+    targetPiece: 1
+  - timeSeconds: 192.23
+    targetPiece: 0
+  - timeSeconds: 192.23
+    targetPiece: 3
+  - timeSeconds: 192.709
+    targetPiece: 0
+  - timeSeconds: 192.709
+    targetPiece: 1
+  - timeSeconds: 193.18
+    targetPiece: 0
+  - timeSeconds: 193.19
+    targetPiece: 4
+  - timeSeconds: 193.66
+    targetPiece: 4
+  - timeSeconds: 193.669
+    targetPiece: 0
+  - timeSeconds: 193.669
+    targetPiece: 1
+  - timeSeconds: 194.15
+    targetPiece: 0
+  - timeSeconds: 194.16
+    targetPiece: 4
+  - timeSeconds: 194.64
+    targetPiece: 0
+  - timeSeconds: 194.64
+    targetPiece: 1
+  - timeSeconds: 194.64
+    targetPiece: 4
+  - timeSeconds: 195.11
+    targetPiece: 0
+  - timeSeconds: 195.11
+    targetPiece: 3
+  - timeSeconds: 195.58
+    targetPiece: 0
+  - timeSeconds: 195.58
+    targetPiece: 4
+  - timeSeconds: 195.59
+    targetPiece: 1
+  - timeSeconds: 196.06
+    targetPiece: 0
+  - timeSeconds: 196.06
+    targetPiece: 3
+  - timeSeconds: 196.55
+    targetPiece: 1
+  - timeSeconds: 196.55
+    targetPiece: 4
+  - timeSeconds: 196.57
+    targetPiece: 0
+  - timeSeconds: 197.03
+    targetPiece: 0
+  - timeSeconds: 197.03
+    targetPiece: 4
+  - timeSeconds: 197.51
+    targetPiece: 0
+  - timeSeconds: 197.52
+    targetPiece: 1
+  - timeSeconds: 197.52
+    targetPiece: 4
+  - timeSeconds: 197.99
+    targetPiece: 0
+  - timeSeconds: 198
+    targetPiece: 3
+  - timeSeconds: 198.479
+    targetPiece: 0
+  - timeSeconds: 198.479
+    targetPiece: 4
+  - timeSeconds: 198.51
+    targetPiece: 1
+  - timeSeconds: 198.95
+    targetPiece: 0
+  - timeSeconds: 199.439
+    targetPiece: 0
+  - timeSeconds: 199.449
+    targetPiece: 1
+  - timeSeconds: 199.449
+    targetPiece: 4
+  - timeSeconds: 199.93
+    targetPiece: 0
+  - timeSeconds: 199.93
+    targetPiece: 3
+  - timeSeconds: 200.4
+    targetPiece: 3
+  - timeSeconds: 200.41
+    targetPiece: 0
+  - timeSeconds: 200.42
+    targetPiece: 1
+  - timeSeconds: 200.87
+    targetPiece: 3
+  - timeSeconds: 200.88
+    targetPiece: 0
+  - timeSeconds: 201.36
+    targetPiece: 0
+  - timeSeconds: 201.36
+    targetPiece: 1
+  - timeSeconds: 201.36
+    targetPiece: 3
+  - timeSeconds: 201.83
+    targetPiece: 0
+  - timeSeconds: 201.85
+    targetPiece: 4
+  - timeSeconds: 202.32
+    targetPiece: 0
+  - timeSeconds: 202.33
+    targetPiece: 3
+  - timeSeconds: 202.34
+    targetPiece: 1
+  - timeSeconds: 202.8
+    targetPiece: 0
+  - timeSeconds: 202.82
+    targetPiece: 4
+  - timeSeconds: 203.3
+    targetPiece: 0
+  - timeSeconds: 203.3
+    targetPiece: 3
+  - timeSeconds: 203.791
+    targetPiece: 0
+  - timeSeconds: 203.821
+    targetPiece: 6
+  - timeSeconds: 204.32
+    targetPiece: 0
+  - timeSeconds: 204.79
+    targetPiece: 0
+  - timeSeconds: 205.28
+    targetPiece: 0
+  - timeSeconds: 205.77
+    targetPiece: 0
+  - timeSeconds: 206.26
+    targetPiece: 5
+  - timeSeconds: 206.3
+    targetPiece: 0
+  - timeSeconds: 206.78
+    targetPiece: 0
+  - timeSeconds: 207.28
+    targetPiece: 0
+  - timeSeconds: 207.77
+    targetPiece: 0
+  - timeSeconds: 208.26
+    targetPiece: 1
+  - timeSeconds: 208.26
+    targetPiece: 6
+  - timeSeconds: 208.74
+    targetPiece: 0
+  - timeSeconds: 209.25
+    targetPiece: 1
+  - timeSeconds: 209.25
+    targetPiece: 6
+  - timeSeconds: 209.72
+    targetPiece: 0
+  - timeSeconds: 210.23
+    targetPiece: 1
+  - timeSeconds: 210.23
+    targetPiece: 6
+  - timeSeconds: 210.71
+    targetPiece: 0
+  - timeSeconds: 211.2
+    targetPiece: 1
+  - timeSeconds: 211.22
+    targetPiece: 5
+  - timeSeconds: 211.67
+    targetPiece: 0
+  - timeSeconds: 212.16
+    targetPiece: 1
+  - timeSeconds: 212.64
+    targetPiece: 0
+  - timeSeconds: 212.65
+    targetPiece: 6
+  - timeSeconds: 212.929
+    targetPiece: 0
+  - timeSeconds: 213.3
+    targetPiece: 6
+  - timeSeconds: 213.309
+    targetPiece: 1
+  - timeSeconds: 213.59
+    targetPiece: 0
+  - timeSeconds: 214.119
+    targetPiece: 1
+  - timeSeconds: 214.61
+    targetPiece: 0
+  - timeSeconds: 214.61
+    targetPiece: 6
+  - timeSeconds: 215.13
+    targetPiece: 1
+  - timeSeconds: 215.15
+    targetPiece: 6
+  - timeSeconds: 215.59
+    targetPiece: 0
+  - timeSeconds: 216.089
+    targetPiece: 1
+  - timeSeconds: 216.56
+    targetPiece: 0
+  - timeSeconds: 216.62
+    targetPiece: 6
+  - timeSeconds: 217.049
+    targetPiece: 1
+  - timeSeconds: 217.52
+    targetPiece: 0
+  - timeSeconds: 218.03
+    targetPiece: 1
+  - timeSeconds: 218.03
+    targetPiece: 6
+  - timeSeconds: 218.5
+    targetPiece: 0
+  - timeSeconds: 219
+    targetPiece: 1
+  - timeSeconds: 219
+    targetPiece: 6
+  - timeSeconds: 219.47
+    targetPiece: 6
+  - timeSeconds: 219.48
+    targetPiece: 0
+  - timeSeconds: 219.97
+    targetPiece: 1
+  - timeSeconds: 220.46
+    targetPiece: 0
+  - timeSeconds: 220.78
+    targetPiece: 0
+  - timeSeconds: 221.14
+    targetPiece: 1
+  - timeSeconds: 221.45
+    targetPiece: 0
+  - timeSeconds: 221.94
+    targetPiece: 1
+  - timeSeconds: 222.41
+    targetPiece: 0
+  - timeSeconds: 222.92
+    targetPiece: 1
+  - timeSeconds: 223.41
+    targetPiece: 6
+  - timeSeconds: 223.421
+    targetPiece: 0
+  - timeSeconds: 227.58
+    targetPiece: 0
+  - timeSeconds: 227.59
+    targetPiece: 5
