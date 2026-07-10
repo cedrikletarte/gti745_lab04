@@ -318,7 +318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 744064cc4c27d83478300d15ae11166b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrumKit.Rhythm.Conductor
-  chart: {fileID: 11400000, guid: a3d573b83655cb341980d7069d72dcc6, type: 2}
+  chart: {fileID: 11400000, guid: e75520c5b2b56144badd42c3a56761a9, type: 2}
   leadInSeconds: 1
   autoStart: 1
 --- !u!114 &297701446

@@ -290,7 +290,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DrumKit.Rhythm.RhythmChartRecorder
   conductor: {fileID: 195347470}
   registry: {fileID: 0}
-  finalGameplaySong: {fileID: 8300000, guid: 91c6d21d475843745acbcb80f45646fe, type: 3}
+  finalGameplaySong: {fileID: 8300000, guid: 7d911fada233a864b81fd505bdbb3986, type: 3}
   bpm: 100
   startOffsetSeconds: 5
   outputFolder: Assets/DrumKit/Rhythm/Charts

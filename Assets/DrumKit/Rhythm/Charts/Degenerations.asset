@@ -15,4 +15,8 @@ MonoBehaviour:
   song: {fileID: 8300000, guid: 7d911fada233a864b81fd505bdbb3986, type: 3}
   bpm: 100
   startOffsetSeconds: 0
-  notes: []
+  notes:
+  - timeSeconds: 0
+    targetPiece: 0
+  - timeSeconds: 0
+    targetPiece: 0
