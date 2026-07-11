@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 309486375}
   - component: {fileID: 309486374}
   - component: {fileID: 309486373}
+  - component: {fileID: 309486376}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -207,6 +208,72 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &309486376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 309486372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35b6f1774411e5c4aa67b45e9e042f0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DrumKit.Input.DrumPedalInput
+  registry: {fileID: 0}
+  maxHapticDuration: 0.06
+  logDebug: 1
+  bindings:
+  - targetPiece: {fileID: 824022264}
+    piece: 0
+    action:
+      m_UseReference: 1
+      m_Action:
+        m_Name: BassDrumPedal
+        m_Type: 1
+        m_ExpectedControlType: Button
+        m_Id: b128d446-9929-42c3-9d6a-125e029f1c10
+        m_Processors: 
+        m_Interactions: 
+        m_SingletonActionBindings:
+        - m_Name: 
+          m_Id: ec854bde-6179-4596-ac91-4330a9c79752
+          m_Path: <XRController>{RightHand}/trigger
+          m_Interactions: 
+          m_Processors: 
+          m_Groups: 
+          m_Action: BassDrumPedal
+          m_Flags: 0
+        m_Flags: 0
+      m_Reference: {fileID: 83097790271614945, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+    intensity: 0.85
+    haptics: {fileID: 2082973982313127993}
+    retriggerCooldown: 0.04
+  - targetPiece: {fileID: 824022265}
+    piece: 5
+    action:
+      m_UseReference: 1
+      m_Action:
+        m_Name: HiHatPedal
+        m_Type: 1
+        m_ExpectedControlType: Button
+        m_Id: d99e55ba-0203-442e-9ccf-b1f6e4d0671f
+        m_Processors: 
+        m_Interactions: 
+        m_SingletonActionBindings:
+        - m_Name: 
+          m_Id: 6c4ee73d-0102-4fae-8aa7-bbf19d27bfe8
+          m_Path: <XRController>{LeftHand}/trigger
+          m_Interactions: 
+          m_Processors: 
+          m_Groups: 
+          m_Action: HiHatPedal
+          m_Flags: 0
+        m_Flags: 0
+      m_Reference: {fileID: -5982496924579745919, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+    intensity: 0.7
+    haptics: {fileID: 2082973982313127992}
+    retriggerCooldown: 0.04
 --- !u!1001 &824022263
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -264,6 +331,28 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95499e5edb5164148899978f6a47fa71, type: 3}
+--- !u!114 &824022264 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1541178323678979480, guid: 95499e5edb5164148899978f6a47fa71, type: 3}
+  m_PrefabInstance: {fileID: 824022263}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 921cf8b9ec083ae4ba21914132337a36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &824022265 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8065001188680223347, guid: 95499e5edb5164148899978f6a47fa71, type: 3}
+  m_PrefabInstance: {fileID: 824022263}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 921cf8b9ec083ae4ba21914132337a36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1533706902
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -378,6 +467,28 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2918b89ea41253f48a710da0fe6e59db, type: 3}
+--- !u!114 &2082973982313127992 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4745973783542510632, guid: 2918b89ea41253f48a710da0fe6e59db, type: 3}
+  m_PrefabInstance: {fileID: 2082973982313127991}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b734f2bd29eeddd4d85afb0c266228c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2082973982313127993 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3017286415612143348, guid: 2918b89ea41253f48a710da0fe6e59db, type: 3}
+  m_PrefabInstance: {fileID: 2082973982313127991}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b734f2bd29eeddd4d85afb0c266228c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

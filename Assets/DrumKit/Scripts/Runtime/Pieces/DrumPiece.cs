@@ -88,13 +88,7 @@ namespace DrumKit.Pieces
             float intensity01 = Mathf.Clamp01(Mathf.InverseLerp(minStrikeSpeed, maxStrikeSpeed, impactSpeed));
             float radial01 = ComputeRadialPosition(worldContactPoint, up);
 
-            OnStruck?.Invoke(this, intensity01, worldContactPoint);
-
-            if (soundBank != null &&
-                soundBank.TryPickClip(intensity01, radial01, out AudioClip clip, out float volume, out float pitch))
-            {
-                m_VoicePool.PlayClip(clip, volume, pitch * DrumPieceSoundBank.SemitonesToPitch(pitchOffsetSemitones));
-            }
+            EmitStruck(intensity01, radial01, worldContactPoint);
 
             if (m_Rigidbody != null)
             {
@@ -102,6 +96,35 @@ namespace DrumKit.Pieces
             }
 
             striker.PlayHapticImpulse(intensity01);
+        }
+
+        /// <summary>
+        /// Plays this piece as if struck, but driven by a controller button standing in for
+        /// a foot pedal (bass drum kick / hi-hat pedal) - pieces you can't reach with a
+        /// hand-held mallet in VR. Raises the same OnStruck event a real strike does, so
+        /// RhythmScorer judges, scores and combos a pedal hit exactly like a stick hit.
+        /// Intensity is supplied by the caller (no impact-speed gating) and the contact is
+        /// treated as dead-center (radial 0).
+        /// </summary>
+        public void TriggerPedalHit(float intensity01)
+        {
+            intensity01 = Mathf.Clamp01(intensity01);
+            m_LastEventTime = Time.time;
+
+            Vector3 contactPoint = m_Collider != null ? m_Collider.bounds.center : transform.position;
+            EmitStruck(intensity01, 0f, contactPoint);
+        }
+
+        /// <summary>Fires the strike event and plays the layered sample - the shared tail of a physical strike and a pedal hit.</summary>
+        void EmitStruck(float intensity01, float radial01, Vector3 worldContactPoint)
+        {
+            OnStruck?.Invoke(this, intensity01, worldContactPoint);
+
+            if (soundBank != null &&
+                soundBank.TryPickClip(intensity01, radial01, out AudioClip clip, out float volume, out float pitch))
+            {
+                m_VoicePool.PlayClip(clip, volume, pitch * DrumPieceSoundBank.SemitonesToPitch(pitchOffsetSemitones));
+            }
         }
 
         void OnTriggerStay(Collider other)
