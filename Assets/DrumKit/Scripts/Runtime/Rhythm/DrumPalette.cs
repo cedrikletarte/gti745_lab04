@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace DrumKit.Rhythm
@@ -8,32 +9,29 @@ namespace DrumKit.Rhythm
     /// RhythmCueSpawner) read their colour from here, so an anneau always matches the drum it
     /// tells the player to strike - the whole point of the colour cue.
     ///
-    /// Keyed by the stable DrumPieceId enum rather than a scene reference, so the mapping holds
-    /// identically across the Solo and Rythme scenes.
+    /// Only the drum shells (which have a paintable "Main Color" material) are colour-coded.
+    /// The cymbals - hi-hat and the two crashes - are deliberately left out: they keep their
+    /// natural metal look and their cue rings keep the CueRingMaterial's original colour.
+    /// Keyed by the stable DrumPieceId enum so the mapping holds identically across the Solo
+    /// and Rythme scenes.
     /// </summary>
     public static class DrumPalette
     {
-        // Eight well-separated hues so neighbouring pieces never read as the same colour.
-        static readonly Color[] k_Colors =
+        static readonly Dictionary<DrumPieceId, Color> k_Colors = new()
         {
-            new Color(1.00f, 0.20f, 0.20f), // BassDrum   - red
-            new Color(1.00f, 0.55f, 0.10f), // SnareDrum  - orange
-            new Color(0.65f, 0.90f, 0.20f), // LeftTom    - lime
-            new Color(0.20f, 0.85f, 0.40f), // RightTom   - green
-            new Color(0.20f, 0.55f, 1.00f), // FloorTom   - blue
-            new Color(1.00f, 0.90f, 0.20f), // HiHat      - yellow
-            new Color(1.00f, 0.30f, 0.80f), // LeftCrash  - magenta
-            new Color(0.65f, 0.35f, 1.00f), // RightCrash - purple
+            { DrumPieceId.BassDrum,  new Color(1.00f, 0.20f, 0.20f) }, // red
+            { DrumPieceId.SnareDrum, new Color(1.00f, 0.55f, 0.10f) }, // orange
+            { DrumPieceId.LeftTom,   new Color(1.00f, 0.90f, 0.20f) }, // yellow
+            { DrumPieceId.RightTom,  new Color(0.20f, 0.85f, 0.40f) }, // green
+            { DrumPieceId.FloorTom,  new Color(0.20f, 0.55f, 1.00f) }, // blue
         };
 
-        static readonly Color k_Fallback = Color.white;
-
-        /// <summary>The colour assigned to a given drum piece. Opaque (alpha 1); callers that
-        /// need translucency (the rings) apply their own alpha.</summary>
-        public static Color GetColor(DrumPieceId id)
-        {
-            int index = (int)id;
-            return index >= 0 && index < k_Colors.Length ? k_Colors[index] : k_Fallback;
-        }
+        /// <summary>
+        /// The colour coding for a piece. Returns false for pieces that are deliberately not
+        /// colour-coded (the cymbals) - callers should then leave that instrument and its rings
+        /// with their original look. The colour is opaque (alpha 1); callers needing
+        /// translucency (the rings) apply their own alpha.
+        /// </summary>
+        public static bool TryGetColor(DrumPieceId id, out Color color) => k_Colors.TryGetValue(id, out color);
     }
 }

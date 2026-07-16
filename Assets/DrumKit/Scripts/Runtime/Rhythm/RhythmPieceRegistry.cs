@@ -69,9 +69,9 @@ namespace DrumKit.Rhythm
                 m_IdsByPiece[piece] = id;
                 m_LocalFlatAxisByPiece[piece] = ComputeLocalFlatAxis(piece.GetComponent<Collider>());
 
-                if (tintPieces)
+                if (tintPieces && DrumPalette.TryGetColor(id, out Color pieceColor))
                 {
-                    TintPiece(piece, DrumPalette.GetColor(id));
+                    TintPiece(piece, pieceColor);
                 }
             }
         }
@@ -80,13 +80,13 @@ namespace DrumKit.Rhythm
 
         public bool TryGetId(DrumPiece piece, out DrumPieceId id) => m_IdsByPiece.TryGetValue(piece, out id);
 
-        /// <summary>The colour coding for a resolved piece - the same colour its cue rings use.</summary>
+        /// <summary>The colour coding for a resolved piece - the same colour its cue rings use.
+        /// Returns false for pieces that aren't colour-coded (the cymbals).</summary>
         public bool TryGetColor(DrumPiece piece, out Color color)
         {
             if (m_IdsByPiece.TryGetValue(piece, out DrumPieceId id))
             {
-                color = DrumPalette.GetColor(id);
-                return true;
+                return DrumPalette.TryGetColor(id, out color);
             }
 
             color = Color.white;
