@@ -70,7 +70,7 @@ namespace DrumKit.Rhythm
             float diameter = 2f * Vector3.ProjectOnPlane(piece.GetComponent<Collider>().bounds.extents, worldFlatNormal).magnitude;
 
             CueRingVisual ring = m_Pool.Count > 0 ? m_Pool.Dequeue() : Instantiate(ringPrefab, transform);
-            ring.Begin(conductor, note.timeSeconds, piece, localFlatAxis, diameter);
+            ring.Begin(conductor, note.timeSeconds, piece, localFlatAxis, diameter, DrumPalette.GetColor(note.targetPiece));
             m_Active.Add(ring);
         }
     }

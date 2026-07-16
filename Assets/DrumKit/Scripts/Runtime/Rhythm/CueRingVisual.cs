@@ -23,8 +23,17 @@ namespace DrumKit.Rhythm
         [Range(0.5f, 0.98f)]
         [SerializeField] float innerRadiusRatio = 0.85f;
         [SerializeField] int segments = 48;
+        [Range(0f, 1f)]
+        [Tooltip("Opacity the piece's colour is drawn at, so the ring stays a translucent overlay.")]
+        [SerializeField] float ringAlpha = 0.7f;
+
+        static readonly int k_BaseColor = Shader.PropertyToID("_BaseColor");
+        static readonly int k_Color = Shader.PropertyToID("_Color");
 
         static Mesh s_SharedRingMesh;
+
+        MeshRenderer m_Renderer;
+        MaterialPropertyBlock m_PropertyBlock;
 
         Conductor m_Conductor;
         DrumPiece m_TargetPiece;
@@ -44,6 +53,8 @@ namespace DrumKit.Rhythm
             }
 
             GetComponent<MeshFilter>().sharedMesh = s_SharedRingMesh;
+            m_Renderer = GetComponent<MeshRenderer>();
+            m_PropertyBlock = new MaterialPropertyBlock();
         }
 
         /// <summary>
@@ -54,7 +65,7 @@ namespace DrumKit.Rhythm
         /// orientation are re-derived from targetPiece every frame (not cached) so a
         /// physically swinging cymbal keeps the ring aligned to its live pose.
         /// </summary>
-        public void Begin(Conductor conductor, float noteTimeSeconds, DrumPiece targetPiece, Vector3 localFlatAxis, float targetDiameter)
+        public void Begin(Conductor conductor, float noteTimeSeconds, DrumPiece targetPiece, Vector3 localFlatAxis, float targetDiameter, Color pieceColor)
         {
             m_Conductor = conductor;
             m_TargetPiece = targetPiece;
@@ -63,9 +74,24 @@ namespace DrumKit.Rhythm
             m_SpawnTimeSeconds = conductor.SongPositionSeconds;
             m_NoteTimeSeconds = noteTimeSeconds;
             m_TargetDiameter = targetDiameter;
+            ApplyColor(pieceColor);
             IsFinished = false;
             gameObject.SetActive(true);
             UpdatePose();
+        }
+
+        /// <summary>
+        /// Tints this ring to the target piece's colour via a MaterialPropertyBlock, so every
+        /// pooled ring can show a different colour off the one shared (translucent) material -
+        /// no per-ring material instances, no edits leaking back into the shared asset.
+        /// </summary>
+        void ApplyColor(Color pieceColor)
+        {
+            pieceColor.a = ringAlpha;
+            m_Renderer.GetPropertyBlock(m_PropertyBlock);
+            m_PropertyBlock.SetColor(k_BaseColor, pieceColor);
+            m_PropertyBlock.SetColor(k_Color, pieceColor);
+            m_Renderer.SetPropertyBlock(m_PropertyBlock);
         }
 
         void Update()

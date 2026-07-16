@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DrumKit.Pieces;
+using DrumKit.Visuals;
 
 namespace DrumKit.Rhythm
 {
@@ -14,6 +15,15 @@ namespace DrumKit.Rhythm
     {
         [Tooltip("Root of the drum kit hierarchy (the Drum prefab instance in the scene).")]
         [SerializeField] Transform drumKitRoot;
+
+        [Tooltip("Tint each instrument with its DrumPalette colour at startup, so a piece and the rings that point to it read as the same colour.")]
+        [SerializeField] bool tintPieces = true;
+
+        [Tooltip("Only the sub-mesh using a material with this exact name is recoloured (the drum shell's 'Main Color'). Chrome hardware, rims and heads keep their own materials. Cymbals have no such material and are left untouched.")]
+        [SerializeField] string mainColorMaterialName = "Main Color";
+
+        static readonly int k_BaseColor = Shader.PropertyToID("_BaseColor");
+        static readonly int k_Color = Shader.PropertyToID("_Color");
 
         static readonly (DrumPieceId id, string hierarchyName)[] k_PieceNames =
         {
@@ -58,12 +68,66 @@ namespace DrumKit.Rhythm
                 m_PiecesById[id] = piece;
                 m_IdsByPiece[piece] = id;
                 m_LocalFlatAxisByPiece[piece] = ComputeLocalFlatAxis(piece.GetComponent<Collider>());
+
+                if (tintPieces)
+                {
+                    TintPiece(piece, DrumPalette.GetColor(id));
+                }
             }
         }
 
         public bool TryGetPiece(DrumPieceId id, out DrumPiece piece) => m_PiecesById.TryGetValue(id, out piece);
 
         public bool TryGetId(DrumPiece piece, out DrumPieceId id) => m_IdsByPiece.TryGetValue(piece, out id);
+
+        /// <summary>The colour coding for a resolved piece - the same colour its cue rings use.</summary>
+        public bool TryGetColor(DrumPiece piece, out Color color)
+        {
+            if (m_IdsByPiece.TryGetValue(piece, out DrumPieceId id))
+            {
+                color = DrumPalette.GetColor(id);
+                return true;
+            }
+
+            color = Color.white;
+            return false;
+        }
+
+        /// <summary>
+        /// Recolours only the piece's "Main Color" sub-mesh (the paintable drum shell you see
+        /// in the inspector) to its palette colour, via a per-sub-mesh MaterialPropertyBlock -
+        /// so chrome hardware, rims and heads keep their own materials and the shared "Main
+        /// Color" material asset stays untouched (other drums sharing it are unaffected). Skips
+        /// PedalButtonPrompt renderers, and leaves cymbals (which have no such material) as they
+        /// are - their cue rings still carry the piece's colour.
+        /// </summary>
+        void TintPiece(DrumPiece piece, Color color)
+        {
+            color.a = 1f;
+            var block = new MaterialPropertyBlock();
+
+            foreach (Renderer renderer in piece.GetComponentsInChildren<Renderer>(true))
+            {
+                if (renderer.GetComponentInParent<PedalButtonPrompt>() != null)
+                {
+                    continue;
+                }
+
+                Material[] materials = renderer.sharedMaterials;
+                for (int subMesh = 0; subMesh < materials.Length; subMesh++)
+                {
+                    if (materials[subMesh] == null || materials[subMesh].name != mainColorMaterialName)
+                    {
+                        continue;
+                    }
+
+                    renderer.GetPropertyBlock(block, subMesh);
+                    block.SetColor(k_BaseColor, color);
+                    block.SetColor(k_Color, color);
+                    renderer.SetPropertyBlock(block, subMesh);
+                }
+            }
+        }
 
         public IEnumerable<DrumPieceId> KnownPieceIds => m_PiecesById.Keys;
 
