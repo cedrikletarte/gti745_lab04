@@ -42,17 +42,7 @@ namespace DrumKit.Striking
 
             if (m_VelocityProvider == null)
             {
-                Debug.LogError($"{nameof(DrumStriker)} on '{name}' requires a component implementing {nameof(IVelocityProvider)} " +
-                                $"(e.g. {nameof(TransformVelocityTracker)} or {nameof(RigidbodyVelocityProvider)}).", this);
-            }
-        }
-
-        /// <summary>Sends a short haptic pulse to this striker's controller, if one is found in its parent chain.</summary>
-        public void PlayHapticImpulse(float intensity01)
-        {
-            if (m_HapticPlayer != null)
-            {
-                m_HapticPlayer.SendHapticImpulse(Mathf.Clamp01(intensity01), maxHapticDuration * Mathf.Clamp01(intensity01));
+                Debug.LogError($"{nameof(DrumStriker)} on '{name}' requires a component implementing " + $"{nameof(IVelocityProvider)}.", this);
             }
         }
 
@@ -77,9 +67,16 @@ namespace DrumKit.Striking
 
             if (distance > 0.005f)
             {
-                float radius = m_Collider.radius * transform.lossyScale.x;
-                int hitCount = Physics.SphereCastNonAlloc(m_PreviousPosition, radius, delta / distance, m_SweepHits, distance,
-                    ~0, QueryTriggerInteraction.Collide);
+                Vector3 direction = delta / distance;
+
+                // Use the largest scale axis so a non-uniformly scaled striker
+                // does not accidentally use a radius that is too small.
+                Vector3 scale = transform.lossyScale;
+                float largestScale = Mathf.Max(Mathf.Abs(scale.x), Mathf.Abs(scale.y), Mathf.Abs(scale.z));
+
+                float radius = m_Collider.radius * largestScale;
+
+                int hitCount = Physics.SphereCastNonAlloc(m_PreviousPosition, radius, direction, m_SweepHits, distance, ~0, QueryTriggerInteraction.Collide);
 
                 DrumPiece closestPiece = null;
                 Vector3 closestPoint = default;
@@ -88,17 +85,33 @@ namespace DrumKit.Striking
                 for (int i = 0; i < hitCount; i++)
                 {
                     RaycastHit hit = m_SweepHits[i];
-                    DrumPiece piece = hit.collider.GetComponent<DrumPiece>();
-                    if (piece != null && hit.distance < closestDistance)
+
+                    // This also works when the collider is on a child object.
+                    DrumPiece piece = hit.collider.GetComponentInParent<DrumPiece>();
+
+                    if (piece == null || hit.distance >= closestDistance)
                     {
-                        closestPiece = piece;
-                        closestPoint = hit.point;
-                        closestDistance = hit.distance;
+                        continue;
                     }
+
+                    Vector3 contactPoint = hit.point;
+
+                    // A cast that starts overlapped can return distance 0 and an
+                    // unusable point. Fall back to the collider's closest point.
+                    if (hit.distance <= Mathf.Epsilon)
+                    {
+                        contactPoint = hit.collider.ClosestPoint(currentPosition);
+                    }
+
+                    closestPiece = piece;
+                    closestPoint = contactPoint;
+                    closestDistance = hit.distance;
                 }
 
                 if (closestPiece != null)
                 {
+                    // This is the exact world-space position used by DrumPiece
+                    // for audio, scoring, physics, and the VFX spawn.
                     closestPiece.RegisterStrike(this, closestPoint);
                 }
             }
@@ -106,13 +119,18 @@ namespace DrumKit.Striking
             m_PreviousPosition = currentPosition;
         }
 
-        /// <summary>
-        /// Re-syncs the tracked position to where the tip is right now, without sweeping
-        /// for a hit along the way there. For use when something external (e.g. a
-        /// drumstick collision clamp releasing after being held at a surface) teleports the
-        /// tip in a way that isn't a real swing - without this, the next FixedUpdate would
-        /// sweep across that jump and could register a spurious second strike.
-        /// </summary>
+        public void PlayHapticImpulse(float intensity01)
+        {
+            if (m_HapticPlayer == null)
+            {
+                return;
+            }
+
+            float intensity = Mathf.Clamp01(intensity01);
+
+            m_HapticPlayer.SendHapticImpulse(intensity, maxHapticDuration * intensity);
+        }
+
         public void ResetTrackedPosition()
         {
             m_PreviousPosition = transform.position;

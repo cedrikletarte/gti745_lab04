@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.VFX;
 using DrumKit.Audio;
 using DrumKit.Striking;
 
@@ -13,6 +14,8 @@ namespace DrumKit.Pieces
     /// Turns a DrumStriker contact into: a soft-touch/no-op, or a percussive hit with an
     /// intensity and impact position handed off to the piece's DrumVoicePool. Cymbals/hi-hat
     /// additionally choke (mute) when held still after ringing.
+    /// Converts a DrumStriker contact into audio, haptics, optional physics,
+    /// scoring events, and a VFX Graph spawned at the registered hit position.
     /// </summary>
     [RequireComponent(typeof(Collider))]
     [RequireComponent(typeof(DrumVoicePool))]
@@ -29,6 +32,19 @@ namespace DrumKit.Pieces
         [SerializeField] Transform surfaceReference;
         [Tooltip("Tuning offset in semitones, so one sound bank can be shared across differently-tuned pieces (e.g. two toms).")]
         [SerializeField] float pitchOffsetSemitones;
+
+        [Header("Strike VFX")]
+        [Tooltip("Assign the repaired .vfx Visual Effect Graph asset here.")]
+        [SerializeField] VisualEffectAsset strikeVfxGraph;
+
+        [Tooltip("Seconds before the temporary VFX GameObject is destroyed.")]
+        [Min(0.05f)]
+        [SerializeField] float strikeVfxLifetime = 3f;
+
+        [Tooltip("Moves the effect slightly away from the surface. Keep at 0 for the exact hit point.")]
+        [SerializeField] float strikeVfxSurfaceOffset = 0f;
+
+        [SerializeField] bool debugVfx;
 
         [Header("Choke (cymbals / hi-hat)")]
         [SerializeField] bool isChokeable;
@@ -62,31 +78,27 @@ namespace DrumKit.Pieces
         }
 
         /// <summary>
-        /// Called by a DrumStriker that swept through this piece this physics step (see
-        /// DrumStriker.FixedUpdate). Driven by an explicit SphereCast sweep rather than
-        /// Unity's OnTriggerEnter, which can miss fast-moving small colliders tunneling
-        /// through a piece between two physics steps - a real problem at VR swing speeds.
+        /// Called by DrumStriker with the world-space point returned by its sphere cast.
         /// </summary>
         public void RegisterStrike(DrumStriker striker, Vector3 worldContactPoint)
         {
-            if (!striker.TryConsumeCooldown(this))
+            if (striker == null || !striker.TryConsumeCooldown(this))
             {
                 return;
             }
 
-            Vector3 up = surfaceReference.up;
-            float impactSpeed = Mathf.Max(0f, Vector3.Dot(striker.CurrentVelocity, -up));
+            Vector3 surfaceUp = GetSurfaceUp();
+            float impactSpeed = Mathf.Max(0f, Vector3.Dot(striker.CurrentVelocity, -surfaceUp));
 
             m_LastEventTime = Time.time;
 
             if (impactSpeed < minStrikeSpeed)
             {
-                // Deliberate no-op: resting a controller on a drum/cymbal must stay silent.
                 return;
             }
 
             float intensity01 = Mathf.Clamp01(Mathf.InverseLerp(minStrikeSpeed, maxStrikeSpeed, impactSpeed));
-            float radial01 = ComputeRadialPosition(worldContactPoint, up);
+            float radial01 = ComputeRadialPosition(worldContactPoint, surfaceUp);
 
             EmitStruck(intensity01, radial01, worldContactPoint);
 
@@ -99,32 +111,89 @@ namespace DrumKit.Pieces
         }
 
         /// <summary>
-        /// Plays this piece as if struck, but driven by a controller button standing in for
-        /// a foot pedal (bass drum kick / hi-hat pedal) - pieces you can't reach with a
-        /// hand-held mallet in VR. Raises the same OnStruck event a real strike does, so
-        /// RhythmScorer judges, scores and combos a pedal hit exactly like a stick hit.
-        /// Intensity is supplied by the caller (no impact-speed gating) and the contact is
-        /// treated as dead-center (radial 0).
+        /// Used for kick or hi-hat pedal input. It places the effect at the
+        /// center of the outward-facing collider surface.
         /// </summary>
         public void TriggerPedalHit(float intensity01)
         {
             intensity01 = Mathf.Clamp01(intensity01);
             m_LastEventTime = Time.time;
 
-            Vector3 contactPoint = m_Collider != null ? m_Collider.bounds.center : transform.position;
+            Vector3 surfaceUp = GetSurfaceUp();
+            Vector3 contactPoint = transform.position;
+
+            if (m_Collider != null)
+            {
+                float probeDistance = m_Collider.bounds.extents.magnitude + 1f;
+                Vector3 outsidePoint = m_Collider.bounds.center + surfaceUp * probeDistance;
+                contactPoint = m_Collider.ClosestPoint(outsidePoint);
+            }
             EmitStruck(intensity01, 0f, contactPoint);
         }
 
-        /// <summary>Fires the strike event and plays the layered sample - the shared tail of a physical strike and a pedal hit.</summary>
         void EmitStruck(float intensity01, float radial01, Vector3 worldContactPoint)
         {
+            // Every system receives exactly the same registered contact point.
             OnStruck?.Invoke(this, intensity01, worldContactPoint);
-
-            if (soundBank != null &&
-                soundBank.TryPickClip(intensity01, radial01, out AudioClip clip, out float volume, out float pitch))
+            SpawnStrikeVfx(worldContactPoint, intensity01);
+            if (soundBank != null && soundBank.TryPickClip(intensity01, radial01, out AudioClip clip, out float volume, out float pitch))
             {
-                m_VoicePool.PlayClip(clip, volume, pitch * DrumPieceSoundBank.SemitonesToPitch(pitchOffsetSemitones));
+                m_VoicePool.PlayClip(clip, volume,pitch * DrumPieceSoundBank.SemitonesToPitch(pitchOffsetSemitones));
             }
+        }
+        void SpawnStrikeVfx(Vector3 worldContactPoint, float intensity01)
+        {
+            if (strikeVfxGraph == null)
+            {
+                if (debugVfx)
+                {
+                    Debug.LogWarning($"No Strike VFX Graph is assigned on '{name}'.",this);
+                }
+
+                return;
+            }
+            Vector3 surfaceUp = GetSurfaceUp();
+            // Leave surface offset at 0 to use the exact registered hit point.
+            Vector3 spawnPosition = worldContactPoint + surfaceUp * strikeVfxSurfaceOffset;
+
+            // The repaired graph uses local space. Its local +Y direction
+            // is rotated to point out of the drum surface.
+            Quaternion spawnRotation = Quaternion.FromToRotation(Vector3.up,surfaceUp);
+            GameObject vfxObject = new GameObject($"{name}_StrikeVFX");
+            vfxObject.layer = gameObject.layer;
+
+            // No parent: Canvas/EventSystem transforms cannot affect it.
+            vfxObject.transform.SetPositionAndRotation(spawnPosition, spawnRotation);
+            VisualEffect visualEffect = vfxObject.AddComponent<VisualEffect>();
+            visualEffect.visualEffectAsset = strikeVfxGraph;
+
+            // Optional exposed property. It is harmless when the graph
+            // does not contain a property named "Intensity".
+            if (visualEffect.HasFloat("Intensity"))
+            {
+                visualEffect.SetFloat("Intensity", intensity01);
+            }
+
+            // Reinitializes the graph and sends its configured initial event,
+            // normally OnPlay.
+            visualEffect.Reinit();
+
+            if (debugVfx)
+            {
+                Debug.Log($"VFX spawned for '{name}' at {spawnPosition}. " + $"Registered hit point: {worldContactPoint}.", vfxObject);
+                Debug.DrawRay(spawnPosition, surfaceUp * 0.25f, Color.magenta, strikeVfxLifetime);
+            }
+
+            Destroy(vfxObject, strikeVfxLifetime);
+        }
+
+        Vector3 GetSurfaceUp()
+        {
+            Transform reference = surfaceReference != null ? surfaceReference : transform;
+
+            Vector3 surfaceUp = reference.up.normalized;
+
+            return surfaceUp.sqrMagnitude > 0.0001f ? surfaceUp : Vector3.up;
         }
 
         void OnTriggerStay(Collider other)
@@ -134,7 +203,7 @@ namespace DrumKit.Pieces
                 return;
             }
 
-            DrumStriker striker = other.GetComponent<DrumStriker>();
+            DrumStriker striker = other.GetComponentInParent<DrumStriker>();
             if (striker == null)
             {
                 return;
@@ -146,17 +215,16 @@ namespace DrumKit.Pieces
             }
 
             m_VoicePool.Choke(soundBank != null ? soundBank.chokeFadeSeconds : 0.08f);
-            // Throttle: don't restart the fade every single frame the hand stays put.
+
             m_LastEventTime = Time.time;
         }
 
-        /// <summary>0 = impact at the piece's center, 1 = impact at its edge (only meaningful for round pieces like cymbals).</summary>
-        float ComputeRadialPosition(Vector3 worldContactPoint, Vector3 up)
+        float ComputeRadialPosition(Vector3 worldContactPoint, Vector3 surfaceUp)
         {
             Vector3 offsetFromCenter = worldContactPoint - m_Collider.bounds.center;
-            Vector3 horizontalOffset = Vector3.ProjectOnPlane(offsetFromCenter, up);
+            Vector3 horizontalOffset = Vector3.ProjectOnPlane(offsetFromCenter, surfaceUp);
+            float horizontalExtent = Vector3.ProjectOnPlane(m_Collider.bounds.extents, surfaceUp).magnitude;
 
-            float horizontalExtent = Vector3.ProjectOnPlane(m_Collider.bounds.extents, up).magnitude;
             if (horizontalExtent < 0.0001f)
             {
                 horizontalExtent = m_Collider.bounds.extents.magnitude;
@@ -178,9 +246,9 @@ namespace DrumKit.Pieces
             Bounds bounds = col.bounds;
             Gizmos.DrawWireCube(bounds.center, bounds.size);
 
-            Vector3 up = (surfaceReference != null ? surfaceReference : transform).up;
+            Vector3 surfaceUp = GetSurfaceUp();
             Gizmos.color = Color.red;
-            Gizmos.DrawLine(bounds.center, bounds.center + up * 0.1f);
+            Gizmos.DrawLine(bounds.center, bounds.center + surfaceUp * 0.1f);
         }
     }
 }
