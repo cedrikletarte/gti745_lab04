@@ -428,6 +428,10 @@ MonoBehaviour:
   maxStrikeSpeed: 4
   surfaceReference: {fileID: 7256638582732884220}
   pitchOffsetSemitones: 0
+  strikeVfxGraph: {fileID: 8926484042661614526, guid: 84a150fcea9ee064c9e1cbb48afa3341, type: 3}
+  strikeVfxLifetime: 3
+  strikeVfxSurfaceOffset: 0
+  debugVfx: 0
   isChokeable: 0
   chokeGraceSeconds: 0.15
   chokeSpeedThreshold: 0.15
@@ -492,6 +496,10 @@ MonoBehaviour:
   maxStrikeSpeed: 4
   surfaceReference: {fileID: 2251136550072241454}
   pitchOffsetSemitones: 0
+  strikeVfxGraph: {fileID: 8926484042661614526, guid: 84a150fcea9ee064c9e1cbb48afa3341, type: 3}
+  strikeVfxLifetime: 3
+  strikeVfxSurfaceOffset: 0
+  debugVfx: 0
   isChokeable: 1
   chokeGraceSeconds: 0.15
   chokeSpeedThreshold: 0.15
@@ -690,6 +698,10 @@ MonoBehaviour:
   maxStrikeSpeed: 4
   surfaceReference: {fileID: 1623025270175253857}
   pitchOffsetSemitones: 0
+  strikeVfxGraph: {fileID: 8926484042661614526, guid: 84a150fcea9ee064c9e1cbb48afa3341, type: 3}
+  strikeVfxLifetime: 3
+  strikeVfxSurfaceOffset: 0
+  debugVfx: 0
   isChokeable: 0
   chokeGraceSeconds: 0.15
   chokeSpeedThreshold: 0.15
@@ -759,6 +771,10 @@ MonoBehaviour:
   maxStrikeSpeed: 4
   surfaceReference: {fileID: 4673272564915384598}
   pitchOffsetSemitones: 0
+  strikeVfxGraph: {fileID: 8926484042661614526, guid: 84a150fcea9ee064c9e1cbb48afa3341, type: 3}
+  strikeVfxLifetime: 3
+  strikeVfxSurfaceOffset: 0
+  debugVfx: 0
   isChokeable: 0
   chokeGraceSeconds: 0.15
   chokeSpeedThreshold: 0.15
@@ -828,6 +844,10 @@ MonoBehaviour:
   maxStrikeSpeed: 4
   surfaceReference: {fileID: 4322117837823787983}
   pitchOffsetSemitones: 0
+  strikeVfxGraph: {fileID: 8926484042661614526, guid: 84a150fcea9ee064c9e1cbb48afa3341, type: 3}
+  strikeVfxLifetime: 3
+  strikeVfxSurfaceOffset: 0
+  debugVfx: 0
   isChokeable: 1
   chokeGraceSeconds: 0.15
   chokeSpeedThreshold: 0.15
@@ -1021,6 +1041,10 @@ MonoBehaviour:
   maxStrikeSpeed: 4
   surfaceReference: {fileID: 8515441828552775945}
   pitchOffsetSemitones: 0
+  strikeVfxGraph: {fileID: 8926484042661614526, guid: 84a150fcea9ee064c9e1cbb48afa3341, type: 3}
+  strikeVfxLifetime: 3
+  strikeVfxSurfaceOffset: 0
+  debugVfx: 0
   isChokeable: 0
   chokeGraceSeconds: 0.15
   chokeSpeedThreshold: 0.15
@@ -1085,6 +1109,10 @@ MonoBehaviour:
   maxStrikeSpeed: 4
   surfaceReference: {fileID: 96980902679375698}
   pitchOffsetSemitones: 3
+  strikeVfxGraph: {fileID: 8926484042661614526, guid: 84a150fcea9ee064c9e1cbb48afa3341, type: 3}
+  strikeVfxLifetime: 3
+  strikeVfxSurfaceOffset: 0
+  debugVfx: 0
   isChokeable: 0
   chokeGraceSeconds: 0.15
   chokeSpeedThreshold: 0.15
@@ -1159,6 +1187,10 @@ MonoBehaviour:
   maxStrikeSpeed: 4
   surfaceReference: {fileID: 5003674926656141042}
   pitchOffsetSemitones: 0
+  strikeVfxGraph: {fileID: 8926484042661614526, guid: 84a150fcea9ee064c9e1cbb48afa3341, type: 3}
+  strikeVfxLifetime: 3
+  strikeVfxSurfaceOffset: 0
+  debugVfx: 0
   isChokeable: 1
   chokeGraceSeconds: 0.15
   chokeSpeedThreshold: 0.15
