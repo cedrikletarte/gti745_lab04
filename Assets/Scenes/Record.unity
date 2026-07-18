@@ -826,6 +826,7 @@ GameObject:
   - component: {fileID: 439729447}
   - component: {fileID: 439729446}
   - component: {fileID: 439729445}
+  - component: {fileID: 439729449}
   m_Layer: 0
   m_Name: RhythmHudCanvas
   m_TagString: Untagged
@@ -921,6 +922,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 2.9}
   m_SizeDelta: {x: 400, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &439729449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 439729444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7951c64acb0fa62458bf30a60089fe2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.UI.TrackedDeviceGraphicRaycaster
+  m_IgnoreReversedGraphics: 0
+  m_CheckFor2DOcclusion: 0
+  m_CheckFor3DOcclusion: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RaycastTriggerInteraction: 1
 --- !u!1 &450922959
 GameObject:
   m_ObjectHideFlags: 0
@@ -2117,7 +2137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HelpPanelToggle
   helpPanel: {fileID: 863188305}
-  openHelpButton: {fileID: 0}
+  openHelpButton: {fileID: 1419810172}
 --- !u!1 &886240093
 GameObject:
   m_ObjectHideFlags: 0
@@ -3338,7 +3358,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1419810172}
   m_LocalRotation: {x: 0.51103705, y: -0.06259406, z: -0.062594056, w: 0.8549884}
-  m_LocalPosition: {x: 0, y: 0, z: -273}
+  m_LocalPosition: {x: 0, y: 0, z: -254}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3347,7 +3367,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -347, y: -49}
+  m_AnchoredPosition: {x: -356, y: -97}
   m_SizeDelta: {x: 50, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1419810174
