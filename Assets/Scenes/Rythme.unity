@@ -612,6 +612,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PauseMenuController
   pauseBackground: {fileID: 2080856953}
   helpPanel: {fileID: 545799855}
+  modeLabel: {fileID: 1830508405}
+  pauseAction:
+    m_UseReference: 1
+    m_Action:
+      m_Name: PauseToggle
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: a1f4c2e0-7b3d-4e9a-8c21-6f5b9d0e1a72
+      m_Processors:
+      m_Interactions:
+      m_SingletonActionBindings:
+      - m_Name:
+        m_Id: b2e5d3f1-8c4e-4f0b-9d32-7a6c0e1f2b83
+        m_Path: <XRController>{LeftHand}/menuButton
+        m_Interactions:
+        m_Processors:
+        m_Groups:
+        m_Action: PauseToggle
+        m_Flags: 0
+      m_Flags: 0
+    m_Reference: {fileID: 578654852051024937, guid: c348712bda248c246b8c49b3db54643f,
+      type: 3}
+  conductor: {fileID: 297701445}
 --- !u!114 &302409200
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -683,18 +706,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 302409198}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -14.987}
-  m_LocalScale: {x: 0.002, y: 0.002, z: 0.002}
+  m_LocalRotation: {x: 0.5104644, y: -0, z: -0, w: 0.8598989}
+  m_LocalPosition: {x: 0, y: 0, z: 133}
+  m_LocalScale: {x: 0.39999998, y: 0.39999998, z: 0.39999998}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 545799858}
   - {fileID: 2080856957}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 439729448}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.044, y: 1.824}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 4, y: -14}
   m_SizeDelta: {x: 900, y: 800}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &309486372
@@ -949,6 +972,7 @@ RectTransform:
   - {fileID: 1830508406}
   - {fileID: 1087251862}
   - {fileID: 928850792}
+  - {fileID: 302409203}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -4171,4 +4195,3 @@ SceneRoots:
   - {fileID: 1404901782}
   - {fileID: 721377880}
   - {fileID: 740926018}
-  - {fileID: 302409203}
