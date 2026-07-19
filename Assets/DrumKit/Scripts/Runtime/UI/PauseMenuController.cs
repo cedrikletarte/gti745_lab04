@@ -31,6 +31,13 @@ public class PauseMenuController : MonoBehaviour
     [Tooltip("Optional. Assign in rhythm scenes so the music freezes too (audio runs on the DSP clock, which Time.timeScale can't stop). Leave empty in Solo/free-play.")]
     public Conductor conductor;
 
+    [Header("Controllers (play <-> menu swap)")]
+    [Tooltip("Objects enabled while paused and disabled while playing - e.g. the controllers' Near-Far (UI ray) interactors so the player can point at the pause menu, exactly like in the main menu.")]
+    public GameObject[] showWhilePaused;
+
+    [Tooltip("Objects disabled while paused and re-enabled while playing - e.g. the Left/Right drumsticks (baguettes).")]
+    public GameObject[] hideWhilePaused;
+
     [Tooltip("Log pause-input diagnostics to the Console. Turn off once the pause button is confirmed working.")]
     public bool logDebug = true;
 
@@ -106,6 +113,7 @@ public class PauseMenuController : MonoBehaviour
             modeLabel.SetActive(false);
         }
 
+        ApplyControllerSwap(true);
         ShowPauseMenu();
     }
 
@@ -136,6 +144,34 @@ public class PauseMenuController : MonoBehaviour
         if (modeLabel != null)
         {
             modeLabel.SetActive(true);
+        }
+
+        ApplyControllerSwap(false);
+    }
+
+    /// <summary>Swaps the controllers between menu mode (UI ray pointers) and play mode (drumsticks).</summary>
+    void ApplyControllerSwap(bool paused)
+    {
+        if (showWhilePaused != null)
+        {
+            foreach (GameObject go in showWhilePaused)
+            {
+                if (go != null)
+                {
+                    go.SetActive(paused);
+                }
+            }
+        }
+
+        if (hideWhilePaused != null)
+        {
+            foreach (GameObject go in hideWhilePaused)
+            {
+                if (go != null)
+                {
+                    go.SetActive(!paused);
+                }
+            }
         }
     }
 

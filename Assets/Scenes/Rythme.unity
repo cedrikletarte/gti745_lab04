@@ -119,6 +119,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &32687685 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1444988127393538561, guid: 2918b89ea41253f48a710da0fe6e59db, type: 3}
+  m_PrefabInstance: {fileID: 1404901782}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &145015393
 GameObject:
   m_ObjectHideFlags: 0
@@ -591,6 +596,7 @@ GameObject:
   - component: {fileID: 302409201}
   - component: {fileID: 302409200}
   - component: {fileID: 302409199}
+  - component: {fileID: 302409204}
   m_Layer: 5
   m_Name: PauseMenu
   m_TagString: Untagged
@@ -620,21 +626,35 @@ MonoBehaviour:
       m_Type: 1
       m_ExpectedControlType: Button
       m_Id: a1f4c2e0-7b3d-4e9a-8c21-6f5b9d0e1a72
-      m_Processors:
-      m_Interactions:
+      m_Processors: 
+      m_Interactions: 
       m_SingletonActionBindings:
-      - m_Name:
+      - m_Name: 
         m_Id: b2e5d3f1-8c4e-4f0b-9d32-7a6c0e1f2b83
         m_Path: <XRController>{LeftHand}/menuButton
-        m_Interactions:
-        m_Processors:
-        m_Groups:
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
         m_Action: PauseToggle
         m_Flags: 0
       m_Flags: 0
-    m_Reference: {fileID: 578654852051024937, guid: c348712bda248c246b8c49b3db54643f,
-      type: 3}
+    m_Reference: {fileID: 578654852051024937, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   conductor: {fileID: 297701445}
+  showWhilePaused:
+  - {fileID: 1043756263}
+  - {fileID: 555925183}
+  - {fileID: 604551218}
+  - {fileID: 498067656}
+  - {fileID: 1268585210}
+  - {fileID: 1154818097}
+  - {fileID: 777117425}
+  - {fileID: 307151895}
+  hideWhilePaused:
+  - {fileID: 497663250}
+  - {fileID: 938546571}
+  - {fileID: 670899139}
+  - {fileID: 32687685}
+  logDebug: 1
 --- !u!114 &302409200
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -720,6 +740,30 @@ RectTransform:
   m_AnchoredPosition: {x: 4, y: -14}
   m_SizeDelta: {x: 900, y: 800}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &302409204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 302409198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7951c64acb0fa62458bf30a60089fe2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.UI.TrackedDeviceGraphicRaycaster
+  m_IgnoreReversedGraphics: 0
+  m_CheckFor2DOcclusion: 0
+  m_CheckFor3DOcclusion: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RaycastTriggerInteraction: 1
+--- !u!1 &307151895 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5772214175218429, guid: 2918b89ea41253f48a710da0fe6e59db, type: 3}
+  m_PrefabInstance: {fileID: 1404901782}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &309486372
 GameObject:
   m_ObjectHideFlags: 0
@@ -1113,6 +1157,16 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 477857093}
   m_CullTransparentMesh: 1
+--- !u!1 &497663250 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2847467587686269424, guid: 2918b89ea41253f48a710da0fe6e59db, type: 3}
+  m_PrefabInstance: {fileID: 1404901782}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &498067656 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2350863399561177977, guid: 2918b89ea41253f48a710da0fe6e59db, type: 3}
+  m_PrefabInstance: {fileID: 1404901782}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &545799855
 GameObject:
   m_ObjectHideFlags: 0
@@ -1191,6 +1245,21 @@ RectTransform:
   m_AnchoredPosition: {x: 468, y: -384}
   m_SizeDelta: {x: 850, y: 1000}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &555925183 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7167084015638235909, guid: 2918b89ea41253f48a710da0fe6e59db, type: 3}
+  m_PrefabInstance: {fileID: 1404901782}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &604551218 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 314824118599112352, guid: 2918b89ea41253f48a710da0fe6e59db, type: 3}
+  m_PrefabInstance: {fileID: 1404901782}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &670899139 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7959246875020355228, guid: 2918b89ea41253f48a710da0fe6e59db, type: 3}
+  m_PrefabInstance: {fileID: 1404901782}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &721377879
 GameObject:
   m_ObjectHideFlags: 0
@@ -1440,6 +1509,11 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!1 &777117425 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3088586353931032555, guid: 2918b89ea41253f48a710da0fe6e59db, type: 3}
+  m_PrefabInstance: {fileID: 1404901782}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &824022263
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1858,6 +1932,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 928850791}
   m_CullTransparentMesh: 1
+--- !u!1 &938546571 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4779301979620100389, guid: 2918b89ea41253f48a710da0fe6e59db, type: 3}
+  m_PrefabInstance: {fileID: 1404901782}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &962773635
 GameObject:
   m_ObjectHideFlags: 0
@@ -2139,6 +2218,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1032589973}
   m_CullTransparentMesh: 1
+--- !u!1 &1043756263 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6883017835495716317, guid: 2918b89ea41253f48a710da0fe6e59db, type: 3}
+  m_PrefabInstance: {fileID: 1404901782}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1047131955
 GameObject:
   m_ObjectHideFlags: 0
@@ -2221,7 +2305,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1047131958}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 302409199}
+        m_TargetAssemblyTypeName: PauseMenuController, Assembly-CSharp
+        m_MethodName: Resume
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1047131958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2512,6 +2608,16 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1087251861}
   m_CullTransparentMesh: 1
+--- !u!1 &1154818097 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 172853440088397210, guid: 2918b89ea41253f48a710da0fe6e59db, type: 3}
+  m_PrefabInstance: {fileID: 1404901782}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1268585210 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9113596983643935172, guid: 2918b89ea41253f48a710da0fe6e59db, type: 3}
+  m_PrefabInstance: {fileID: 1404901782}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1378264996
 GameObject:
   m_ObjectHideFlags: 0
@@ -2661,6 +2767,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 830573785890717595, guid: 2918b89ea41253f48a710da0fe6e59db, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1916839136776774918, guid: 2918b89ea41253f48a710da0fe6e59db, type: 3}
       propertyPath: m_RenderPostProcessing
       value: 1
@@ -2668,6 +2778,18 @@ PrefabInstance:
     - target: {fileID: 3158356397038206278, guid: 2918b89ea41253f48a710da0fe6e59db, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3712620872768047032, guid: 2918b89ea41253f48a710da0fe6e59db, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5950768837822077223, guid: 2918b89ea41253f48a710da0fe6e59db, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680409557932663044, guid: 2918b89ea41253f48a710da0fe6e59db, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7843464463132842073, guid: 2918b89ea41253f48a710da0fe6e59db, type: 3}
       propertyPath: m_LocalPosition.x
