@@ -132,9 +132,9 @@ namespace DrumKit.Rhythm
         public IEnumerable<DrumPieceId> KnownPieceIds => m_PiecesById.Keys;
 
         /// <summary>
-        /// The piece's own local-space axis pointing through its thinnest dimension - i.e.
-        /// the visual "flat face" normal (a drum/cymbal is a short disc: two large
-        /// dimensions plus one short "thickness" one). This is purely geometric and
+        /// The piece's own local-space cylinder axis - the one running through both drum
+        /// heads, i.e. the visual "flat face" normal (a drum/cymbal is a disc: two equal
+        /// diameter dimensions plus one "depth" one along this axis). This is purely geometric and
         /// deliberately independent of DrumPiece.SurfaceUp, which is tuned for hit-detection
         /// math and can point in an entirely different, import-artifact direction that
         /// happens to still work for velocity dot-products but looks wrong for a cosmetic
@@ -158,9 +158,21 @@ namespace DrumKit.Rhythm
                         max = Vector3.Max(max, v);
                     }
 
-                    Vector3 extents = max - min;
-                    if (extents.x <= extents.y && extents.x <= extents.z) return Vector3.right;
-                    if (extents.y <= extents.x && extents.y <= extents.z) return Vector3.up;
+                    Vector3 e = max - min;
+
+                    // A drum is a cylinder: two of its three local extents are ~equal (the round
+                    // head diameter) and the third is the odd one out - the axis running through
+                    // both heads, i.e. the playing-surface normal we want. That axis is the
+                    // SHORTEST extent only for a shallow drum (snare); for a deep one (floor tom,
+                    // bass drum) it is the LONGEST, so the old "smallest extent" rule flipped deep
+                    // drums onto their side and their rings faced sideways (vertical). Instead pick
+                    // the axis whose two perpendicular extents are closest to equal - the roundest
+                    // cross-section belongs to the cylinder axis, whatever its length.
+                    float roundnessAboutX = Mathf.Abs(e.y - e.z); // cross-section perpendicular to X
+                    float roundnessAboutY = Mathf.Abs(e.x - e.z); // ... perpendicular to Y
+                    float roundnessAboutZ = Mathf.Abs(e.x - e.y); // ... perpendicular to Z
+                    if (roundnessAboutX <= roundnessAboutY && roundnessAboutX <= roundnessAboutZ) return Vector3.right;
+                    if (roundnessAboutY <= roundnessAboutX && roundnessAboutY <= roundnessAboutZ) return Vector3.up;
                     return Vector3.forward;
                 }
             }
